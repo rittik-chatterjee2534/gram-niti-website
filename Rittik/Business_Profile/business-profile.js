@@ -1,10 +1,18 @@
+/* Login check */
+
+const loggedInUser = localStorage.getItem("user");
+
+if (!loggedInUser) {
+  window.location.href = "../Login/login.html";
+}
+
+/* Navbar */
+
 const profileBtn = document.getElementById("profile-btn");
 const profileDropdown = document.getElementById("profile-dropdown");
 
 const notificationBtn = document.getElementById("notification-btn");
-const notificationDropdown = document.getElementById(
-  "notification-dropdown",
-);
+const notificationDropdown = document.getElementById("notification-dropdown");
 
 const markAllReadBtn = document.getElementById("mark-all-read");
 const notificationBadge = document.querySelector(".notification-badge");
@@ -12,24 +20,7 @@ const notificationBadge = document.querySelector(".notification-badge");
 const mobileMenuBtn = document.getElementById("mobile-menu-btn");
 const sidebar = document.getElementById("sidebar");
 
-const businessForm = document.getElementById("business-profile-form");
-
-const description = document.getElementById("business-description");
-const descriptionCount = document.getElementById("description-count");
-
-const progressPercentage = document.getElementById(
-  "progress-percentage",
-);
-
-const progressFill = document.getElementById("progress-fill");
-
-const saveDraftBtn = document.getElementById("save-draft-btn");
-
-const logoutBtn = document.getElementById("logout-btn");
-const sidebarLogout = document.getElementById("sidebar-logout");
-
-
-/* Profile menu */
+/* Profile dropdown */
 
 if (profileBtn && profileDropdown) {
   profileBtn.addEventListener("click", (event) => {
@@ -47,8 +38,7 @@ if (profileBtn && profileDropdown) {
   });
 }
 
-
-/* Notifications */
+/* Notification dropdown */
 
 if (notificationBtn && notificationDropdown) {
   notificationBtn.addEventListener("click", (event) => {
@@ -66,8 +56,7 @@ if (notificationBtn && notificationDropdown) {
   });
 }
 
-
-/* Mark notifications as read */
+/* Mark all notifications as read */
 
 if (markAllReadBtn) {
   markAllReadBtn.addEventListener("click", () => {
@@ -91,7 +80,6 @@ if (markAllReadBtn) {
   });
 }
 
-
 /* Mobile sidebar */
 
 if (mobileMenuBtn && sidebar) {
@@ -110,7 +98,6 @@ if (mobileMenuBtn && sidebar) {
   });
 }
 
-
 /* Close mobile sidebar after clicking a link */
 
 if (sidebar) {
@@ -125,8 +112,7 @@ if (sidebar) {
   });
 }
 
-
-/* Close menus when clicking outside */
+/* Close dropdowns when clicking outside */
 
 document.addEventListener("click", (event) => {
   if (
@@ -158,19 +144,37 @@ document.addEventListener("click", (event) => {
   }
 });
 
+/* Form */
 
-/* Business description character count */
+const businessForm = document.getElementById("business-profile-form");
 
-if (description && descriptionCount) {
-  description.addEventListener("input", () => {
-    const length = description.value.length;
+const saveDraftBtn = document.getElementById("save-draft-btn");
 
-    descriptionCount.textContent = `${length} / 500`;
-  });
+const businessDescription = document.getElementById("business-description");
+
+const descriptionCount = document.getElementById("description-count");
+
+const progressPercentage = document.getElementById("progress-percentage");
+
+const progressFill = document.getElementById("progress-fill");
+
+/* Character counter */
+
+function updateDescriptionCount() {
+  if (!businessDescription || !descriptionCount) {
+    return;
+  }
+
+  const currentLength = businessDescription.value.length;
+
+  descriptionCount.textContent = `${currentLength} / 500`;
 }
 
+if (businessDescription) {
+  businessDescription.addEventListener("input", updateDescriptionCount);
+}
 
-/* Profile completion */
+/* Fields used for profile completion */
 
 const fieldsToTrack = [
   "business-name",
@@ -178,36 +182,51 @@ const fieldsToTrack = [
   "business-sector",
   "business-stage",
   "business-description",
+
   "state",
   "district",
   "village",
   "pin-code",
+
   "investment",
   "own-contribution",
   "loan-required",
   "employees",
+
   "experience",
   "education",
   "skills",
+
   "monthly-revenue",
   "target-market",
   "business-goal",
 ];
 
+/* Update profile completion */
+
 function updateProgress() {
-  let completedFields = 0;
+  let completed = 0;
+  let availableFields = 0;
 
   fieldsToTrack.forEach((fieldId) => {
     const field = document.getElementById(fieldId);
 
-    if (field && field.value.trim() !== "") {
-      completedFields++;
+    if (!field) {
+      return;
+    }
+
+    availableFields++;
+
+    if (field.value.trim() !== "") {
+      completed++;
     }
   });
 
-  const percentage = Math.round(
-    (completedFields / fieldsToTrack.length) * 100,
-  );
+  let percentage = 0;
+
+  if (availableFields > 0) {
+    percentage = Math.round((completed / availableFields) * 100);
+  }
 
   if (progressPercentage) {
     progressPercentage.textContent = `${percentage}%`;
@@ -218,30 +237,41 @@ function updateProgress() {
   }
 }
 
-
-/* Listen for field changes */
+/* Watch form fields */
 
 fieldsToTrack.forEach((fieldId) => {
   const field = document.getElementById(fieldId);
 
-  if (field) {
-    field.addEventListener("input", updateProgress);
-    field.addEventListener("change", updateProgress);
+  if (!field) {
+    return;
   }
+
+  field.addEventListener("input", updateProgress);
+  field.addEventListener("change", updateProgress);
 });
 
+/* Convert form to normal object */
+
+function getBusinessFormData() {
+  if (!businessForm) {
+    return {};
+  }
+
+  const formData = new FormData(businessForm);
+  const businessData = {};
+
+  formData.forEach((value, key) => {
+    businessData[key] = value;
+  });
+
+  return businessData;
+}
 
 /* Save draft */
 
 if (saveDraftBtn && businessForm) {
   saveDraftBtn.addEventListener("click", () => {
-    const formData = new FormData(businessForm);
-
-    const businessData = {};
-
-    formData.forEach((value, key) => {
-      businessData[key] = value;
-    });
+    const businessData = getBusinessFormData();
 
     localStorage.setItem(
       "gramnitiBusinessProfileDraft",
@@ -252,38 +282,85 @@ if (saveDraftBtn && businessForm) {
   });
 }
 
-
-/* Restore saved draft */
+/* Restore draft */
 
 function loadSavedDraft() {
-  const savedDraft = localStorage.getItem(
-    "gramnitiBusinessProfileDraft",
-  );
-
-  if (!savedDraft || !businessForm) {
+  if (!businessForm) {
     return;
   }
 
-  const businessData = JSON.parse(savedDraft);
+  const savedDraft = localStorage.getItem("gramnitiBusinessProfileDraft");
 
-  Object.keys(businessData).forEach((key) => {
-    const field = businessForm.elements[key];
-
-    if (field) {
-      field.value = businessData[key];
-    }
-  });
-
-  if (description && descriptionCount) {
-    descriptionCount.textContent =
-      `${description.value.length} / 500`;
+  if (!savedDraft) {
+    return;
   }
 
-  updateProgress();
+  try {
+    const businessData = JSON.parse(savedDraft);
+
+    Object.keys(businessData).forEach((fieldName) => {
+      const field = businessForm.elements[fieldName];
+
+      if (field) {
+        field.value = businessData[fieldName];
+      }
+    });
+
+    updateDescriptionCount();
+    updateProgress();
+  } catch (error) {
+    console.error("Could not load saved draft:", error);
+  }
 }
 
-loadSavedDraft();
+/* Load already completed profile */
 
+function loadSavedProfile() {
+  if (!businessForm) {
+    return false;
+  }
+
+  const savedProfile = localStorage.getItem("gramnitiBusinessProfile");
+
+  if (!savedProfile) {
+    return false;
+  }
+
+  try {
+    const businessData = JSON.parse(savedProfile);
+
+    Object.keys(businessData).forEach((fieldName) => {
+      const field = businessForm.elements[fieldName];
+
+      if (field) {
+        field.value = businessData[fieldName];
+      }
+    });
+
+    updateDescriptionCount();
+    updateProgress();
+
+    return true;
+  } catch (error) {
+    console.error("Could not load business profile:", error);
+
+    return false;
+  }
+}
+
+/*
+  If a completed profile exists, show that.
+  Otherwise restore an unfinished draft.
+*/
+
+const profileLoaded = loadSavedProfile();
+
+if (!profileLoaded) {
+  loadSavedDraft();
+}
+
+updateDescriptionCount();
+updateProgress();
 
 /* Save and continue */
 
@@ -293,35 +370,30 @@ if (businessForm) {
 
     if (!businessForm.checkValidity()) {
       businessForm.reportValidity();
+
       return;
     }
 
-    const formData = new FormData(businessForm);
-
-    const businessData = {};
-
-    formData.forEach((value, key) => {
-      businessData[key] = value;
-    });
+    const businessData = getBusinessFormData();
 
     localStorage.setItem(
       "gramnitiBusinessProfile",
       JSON.stringify(businessData),
     );
 
-    localStorage.removeItem(
-      "gramnitiBusinessProfileDraft",
-    );
+    localStorage.setItem("gramnitiProfileCompleted", "true");
 
-    alert("Business profile saved successfully.");
+    localStorage.removeItem("gramnitiBusinessProfileDraft");
 
-    // Later replace this with the real Market Analysis page
-    // window.location.href = "../Market_Analysis/market-analysis.html";
+    window.location.href = "../Dashboard/dashboard.html";
   });
 }
 
-
 /* Logout */
+
+const logoutBtn = document.getElementById("logout-btn");
+
+const sidebarLogout = document.getElementById("sidebar-logout");
 
 function logoutUser() {
   localStorage.removeItem("user");
@@ -329,8 +401,7 @@ function logoutUser() {
 
   sessionStorage.clear();
 
-  // Update this path when your login page is created
-  // window.location.href = "../Login/login.html";
+  window.location.href = "../Login/login.html";
 }
 
 if (logoutBtn) {
@@ -341,8 +412,7 @@ if (sidebarLogout) {
   sidebarLogout.addEventListener("click", logoutUser);
 }
 
-
-/* Load Lucide icons */
+/* Lucide icons */
 
 if (typeof lucide !== "undefined") {
   lucide.createIcons();
