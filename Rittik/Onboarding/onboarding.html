@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Welcome | GramNiti</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="onboarding.css" />
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <header class="onboarding-navbar">
+      <a href="#" class="navbar-logo">
+        <div class="logo-icon">
+          <i data-lucide="sprout"></i>
+        </div>
+
+        <div class="logo-text">
+          <span class="logo-name">GramNiti</span>
+          <span class="logo-tagline"> Empowering Rural Entrepreneurs </span>
+        </div>
+      </a>
+
+      <div class="navbar-right">
+        <div class="navbar-user">
+          <div class="user-avatar">A</div>
+
+          <div class="user-info">
+            <span class="user-name">Arjun Kumar</span>
+            <span class="user-status">Getting Started</span>
+          </div>
+        </div>
+
+        <button type="button" class="logout-btn" id="logout-btn" title="Logout">
+          <i data-lucide="log-out"></i>
+          <span>Logout</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main -->
+    <main class="onboarding-main">
+      <section class="welcome-section">
+        <!-- Badge -->
+        <div class="welcome-badge">
+          <i data-lucide="sparkles"></i>
+          Let's get started
+        </div>
+
+        <!-- Heading -->
+        <h1>
+          Welcome to GramNiti,
+          <span>Arjun!</span>
+          👋
+        </h1>
+
+        <p class="welcome-description">
+          Turn your business idea into a practical plan. Tell us a little about
+          your business and GramNiti will help you understand its market
+          potential, financial requirements and available government support.
+        </p>
+
+        <!-- Journey -->
+        <div class="journey">
+          <div class="journey-step active">
+            <div class="step-number">1</div>
+
+            <div>
+              <strong>Business Profile</strong>
+              <span>Tell us about your idea</span>
+            </div>
+          </div>
+
+          <div class="journey-line"></div>
+
+          <div class="journey-step">
+            <div class="step-number">2</div>
+
+            <div>
+              <strong>Business Analysis</strong>
+              <span>We analyse your plan</span>
+            </div>
+          </div>
+
+          <div class="journey-line"></div>
+
+          <div class="journey-step">
+            <div class="step-number">3</div>
+
+            <div>
+              <strong>Get Insights</strong>
+              <span>View recommendations</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Benefits -->
+        <div class="benefits-grid">
+          <article class="benefit-card">
+            <div class="benefit-icon">
+              <i data-lucide="chart-no-axes-combined"></i>
+            </div>
+
+            <h2>Market Insights</h2>
+
+            <p>
+              Understand demand, competition and opportunities for your proposed
+              business.
+            </p>
+          </article>
+
+          <article class="benefit-card">
+            <div class="benefit-icon">
+              <i data-lucide="indian-rupee"></i>
+            </div>
+
+            <h2>Financial Planning</h2>
+
+            <p>
+              Estimate investment, funding requirements, loan amount and
+              expected financial performance.
+            </p>
+          </article>
+
+          <article class="benefit-card">
+            <div class="benefit-icon">
+              <i data-lucide="landmark"></i>
+            </div>
+
+            <h2>Government Schemes</h2>
+
+            <p>
+              Discover relevant government schemes and financial support based
+              on your business profile.
+            </p>
+          </article>
+
+          <article class="benefit-card">
+            <div class="benefit-icon">
+              <i data-lucide="gauge"></i>
+            </div>
+
+            <h2>Feasibility Analysis</h2>
+
+            <p>
+              Get an overall assessment to better understand the strengths and
+              risks of your business plan.
+            </p>
+          </article>
+        </div>
+
+        <!-- Bottom CTA -->
+        <div class="onboarding-action">
+          <div class="action-message">
+            <div class="action-icon">
+              <i data-lucide="clock-3"></i>
+            </div>
+
+            <div>
+              <strong>It only takes a few minutes</strong>
+
+              <span>
+                Complete your business profile to get personalized insights.
+              </span>
+            </div>
+          </div>
+
+          <a
+            href="../Business_Profile/business-profile.html"
+            class="get-started-btn"
+            id="get-started-btn"
+          >
+            Get Started
+
+            <i data-lucide="arrow-right"></i>
+          </a>
+        </div>
+
+        <p class="privacy-note">
+          <i data-lucide="shield-check"></i>
+
+          Your information is used to provide personalized business
+          recommendations.
+        </p>
+      </section>
+    </main>
+
+    <script src="onboarding.js"></script>
+  </body>
+</html>
