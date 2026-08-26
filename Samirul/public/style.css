@@ -1,0 +1,465 @@
+/* =========================
+   Global
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #f4f7f4;
+    color: #333;
+}
+
+
+/* =========================
+   Login Section
+========================= */
+
+.login-section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 15px;
+}
+
+
+/* =========================
+   Login Card
+========================= */
+
+.login-card {
+    height:70% ;
+    width: 100%;
+    max-width: 530px;
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 16px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.10);
+}
+
+
+/* =========================
+   Logo
+========================= */
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.logo-icon {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #e8f5e9;
+    border-radius: 50%;
+    font-size: 24px;
+}
+
+.logo h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #333;
+}
+
+.logo h1 span {
+    color: #2e7d32;
+}
+
+
+/* =========================
+   Login Header
+========================= */
+
+.login-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.login-header h2 {
+    font-size: 24px;
+    color: #222;
+    margin-bottom: 8px;
+}
+
+.login-header p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #777;
+}
+
+
+/* =========================
+   Login Tabs
+========================= */
+
+.login-tabs {
+    display: flex;
+    width: 100%;
+    margin-bottom: 25px;
+    padding: 4px;
+    background: #f1f3f1;
+    border-radius: 8px;
+}
+
+.tab {
+    flex: 1;
+    padding: 11px;
+    border: none;
+    border-radius: 6px;
+    background: #2e7d32;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+/* =========================
+   Form
+========================= */
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}
+
+
+/* =========================
+   Email & Phone Input
+========================= */
+
+.form-group input[type="email"],
+.form-group input[type="tel"] {
+    width: 100%;
+    height: 48px;
+    padding: 0 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    outline: none;
+    font-family: inherit;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.form-group input[type="email"]:focus,
+.form-group input[type="tel"]:focus {
+    border-color: #2e7d32;
+    box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.10);
+}
+
+
+/* =========================
+   Hidden
+========================= */
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================
+   Password
+========================= */
+
+.password-input {
+    display: flex;
+    width: 100%;
+}
+
+#password {
+    flex: 1;
+    min-width: 0;
+    height: 48px;
+    padding: 0 14px;
+    border: 1px solid #d1d5db;
+    border-right: none;
+    border-radius: 8px 0 0 8px;
+    outline: none;
+    font-family: inherit;
+    font-size: 14px;
+}
+
+#password:focus {
+    border-color: #2e7d32;
+}
+
+#showPassword {
+    height: 48px;
+    padding: 0 16px;
+    border: 1px solid #d1d5db;
+    background: #f5f5f5;
+    color: #333;
+    border-radius: 0 8px 8px 0;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+#showPassword:hover {
+    background: #e5e7eb;
+}
+
+
+/* =========================
+   Error Message
+========================= */
+
+.form-group small {
+    display: block;
+    min-height: 16px;
+    margin-top: 5px;
+    color: #dc2626;
+    font-size: 12px;
+}
+
+
+/* =========================
+   Forgot Password
+========================= */
+
+.form-group a {
+    display: block;
+    text-align: right;
+    margin-top: 1px;
+    color: #2e7d32;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.form-group a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   Remember Me
+========================= */
+
+.remember-row {
+    margin-bottom: 20px;
+}
+
+.remember-row label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    color: #555;
+    font-size: 13px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+#remember {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    accent-color: #2e7d32;
+}
+
+
+/* =========================
+   Login Button
+========================= */
+
+.login-button {
+    width: 100%;
+    height: 48px;
+    border: none;
+    border-radius: 8px;
+    background: #2e7d32;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login-button:hover {
+    background: #1b5e20;
+    transform: translateY(-1px);
+}
+
+.login-button:active {
+    transform: translateY(0);
+}
+
+
+/* =========================
+   Message
+========================= */
+
+#message {
+    margin-top: 12px;
+    text-align: center;
+    font-size: 13px;
+}
+
+
+/* =========================
+   Register
+========================= */
+
+.register-text {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 13px;
+    color: #666;
+}
+
+.register-text a {
+    margin-left: 5px;
+    color: #2e7d32;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.register-text a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   Mobile Responsive
+========================= */
+
+@media (max-width: 480px) {
+
+    .login-section {
+        padding: 20px 12px;
+    }
+
+    .login-card {
+        padding: 25px 20px;
+    }
+
+    .logo h1 {
+        font-size: 25px;
+    }
+
+    .login-header h2 {
+        font-size: 21px;
+    }
+
+    .login-header p {
+        font-size: 13px;
+    }
+}
+/* ================= SOCIAL LOGIN ================= */
+
+.social-login {
+    margin-top: 22px;
+}
+
+
+/* OR Divider */
+
+.or-divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 20px 0;
+    color: #888;
+    font-size: 13px;
+}
+
+.or-divider::before,
+.or-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #ddd;
+}
+
+.or-divider span {
+    white-space: nowrap;
+}
+
+
+/* Social Button */
+
+.social-button {
+    width: 100%;
+    height: 48px;
+
+    border: 1px solid #ddd;
+    border-radius: 8px;
+
+    background: #fff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    margin-bottom: 12px;
+
+    transition: 0.2s ease;
+}
+
+
+/* Hover */
+
+.social-button:hover {
+    background: #f7f7f7;
+    border-color: #bbb;
+}
+
+
+/* Social Icon */
+
+.social-icon {
+    width: 24px;
+    height: 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 19px;
+    font-weight: 700;
+}
+
+
+/* Google */
+
+.google-icon {
+    color: #4245f4;
+    font-family: Arial, sans-serif;
+}
+
+
+/* Facebook */
+
+.facebook-icon {
+    color: #1877f2;
+    font-family: Arial, sans-serif;
+    font-size: 23px;
+}

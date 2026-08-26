@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GramNiti - Login</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= LOGIN PAGE ================= -->
+
+    <main class="login-section">
+
+        <div class="login-card">
+
+            <!-- Logo -->
+
+            
+
+
+            <!-- Heading -->
+
+            <div class="login-header">
+
+                <h2>Welcome Back!</h2>
+
+                <p>
+                    Login to continue your journey with GramNiti.
+                </p>
+
+            </div>
+
+            <!-- Login Type -->
+
+            <!-- Login Form -->
+
+            <form id="loginForm">
+
+                <!-- Email -->
+
+                <div
+                    class="form-group"
+                    id="emailGroup"
+                >
+
+                    <label for="email">
+                      Phone or Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter your Phone or email "
+                    >
+
+                    <small id="emailError"></small>
+
+                </div>
+
+                <!-- Phone -->
+
+                <div
+                    class="form-group hidden"
+                    id="phoneGroup"
+                >
+
+                    <label for="phone">
+                        Phone Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        placeholder="Enter your phone number"
+                        maxlength="10"
+                    >
+
+                    <small id="phoneError"></small>
+
+                </div>
+
+
+                <!-- Password -->
+
+                <div class="form-group">
+                    <div class="label-row">
+
+                        <label for="password">
+                            Password
+                        </label>
+
+                    </div>
+
+
+                    <div class="password-input">
+
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Enter your password"
+                        >
+
+                        <button
+                            type="button"
+                            id="showPassword"
+                        >
+                            Show
+                        </button>
+                        
+
+                    </div>
+                    <small id="passwordError"></small>
+                    <a href="#">
+                            Forgot Password?
+                        </a>
+                </div>
+
+
+                <!-- Remember Me -->
+
+                <div class="remember-row">
+
+                    <label>
+
+                        <input
+                            type="checkbox"
+                            id="remember"
+                        >
+
+                        <span>
+                            keep me sign in 
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+                <!-- Login Button -->
+
+                <button
+    type="submit"
+    class="login-button"
+>
+    Login
+</button>
+
+<p id="message"></p>
+
+<!-- SOCIAL LOGIN -->
+
+<div class="social-login">
+
+    <div class="or-divider">
+        <span>OR</span>
+    </div>
+
+    <button
+        type="button"
+        class="social-button google-button"
+        id="googleLogin"
+    >
+        <span class="social-icon google-icon"><img src="./google.svg" alt="Logo"></span>
+        <span>Continue with Google</span>
+    </button>
+
+    <button
+        type="button"
+        class="social-button facebook-button"
+        id="facebookLogin"
+    >
+        <span class="social-icon facebook-icon"><img src="./facebook.svg" alt="facebook"></span>
+        <span>Continue with Facebook</span>
+    </button>
+
+</div>
+            </form>
+           
+            <!-- Register -->
+
+            <div class="register-text">
+    <span>
+        Don't have an account?
+    </span>
+
+    <a href="create-account.html">
+        Create Account
+    </a>
+
+</div>
+
+        </div>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
