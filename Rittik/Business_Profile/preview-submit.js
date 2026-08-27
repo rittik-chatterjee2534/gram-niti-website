@@ -2,18 +2,13 @@ const profileBtn = document.getElementById("profile-btn");
 const profileDropdown = document.getElementById("profile-dropdown");
 
 const notificationBtn = document.getElementById("notification-btn");
-const notificationDropdown = document.getElementById(
-  "notification-dropdown",
-);
+const notificationDropdown = document.getElementById("notification-dropdown");
 
 const markAllReadBtn = document.getElementById("mark-all-read");
-const notificationBadge = document.querySelector(
-  ".notification-badge",
-);
+const notificationBadge = document.querySelector(".notification-badge");
 
 const mobileMenuBtn = document.getElementById("mobile-menu-btn");
 const sidebar = document.getElementById("sidebar");
-
 
 /* navbar dropdowns */
 
@@ -34,7 +29,6 @@ if (notificationBtn) {
     profileDropdown.classList.remove("active");
   });
 }
-
 
 document.addEventListener("click", function (event) {
   if (
@@ -64,14 +58,11 @@ document.addEventListener("click", function (event) {
   }
 });
 
-
 /* notifications */
 
 if (markAllReadBtn) {
   markAllReadBtn.addEventListener("click", function () {
-    const unreadItems = document.querySelectorAll(
-      ".notification-item.unread",
-    );
+    const unreadItems = document.querySelectorAll(".notification-item.unread");
 
     unreadItems.forEach(function (item) {
       item.classList.remove("unread");
@@ -89,7 +80,6 @@ if (markAllReadBtn) {
   });
 }
 
-
 /* mobile sidebar */
 
 if (mobileMenuBtn && sidebar) {
@@ -102,7 +92,6 @@ if (mobileMenuBtn && sidebar) {
     notificationDropdown.classList.remove("active");
   });
 }
-
 
 /* display helpers */
 
@@ -120,7 +109,6 @@ function showValue(id, value) {
 
   element.textContent = value;
 }
-
 
 function formatMoney(value) {
   if (value === undefined || value === null || value === "") {
@@ -140,7 +128,6 @@ function formatMoney(value) {
   }).format(amount);
 }
 
-
 function formatOption(value, options) {
   if (!value) {
     return "Not provided";
@@ -148,7 +135,6 @@ function formatOption(value, options) {
 
   return options[value] || value;
 }
-
 
 /* readable select values */
 
@@ -210,13 +196,10 @@ const targetMarkets = {
   online: "Online / Digital",
 };
 
-
 /* load profile */
 
 function loadPreview() {
-  const savedData = localStorage.getItem(
-    "gramnitiBusinessProfilePreview",
-  );
+  const savedData = localStorage.getItem("gramnitiBusinessProfilePreview");
 
   if (!savedData) {
     alert(
@@ -234,21 +217,15 @@ function loadPreview() {
   } catch (error) {
     console.error("Could not read business profile:", error);
 
-    alert(
-      "There was a problem loading your business profile.",
-    );
+    alert("There was a problem loading your business profile.");
 
     window.location.href = "business-profile.html";
     return;
   }
 
-
   /* business information */
 
-  showValue(
-    "preview-business-name",
-    data.businessName,
-  );
+  showValue("preview-business-name", data.businessName);
 
   showValue(
     "preview-business-type",
@@ -265,57 +242,27 @@ function loadPreview() {
     formatOption(data.businessStage, businessStages),
   );
 
-  showValue(
-    "preview-business-description",
-    data.businessDescription,
-  );
-
+  showValue("preview-business-description", data.businessDescription);
 
   /* location */
 
-  showValue(
-    "preview-state",
-    formatOption(data.state, states),
-  );
+  showValue("preview-state", formatOption(data.state, states));
 
-  showValue(
-    "preview-district",
-    data.district,
-  );
+  showValue("preview-district", data.district);
 
-  showValue(
-    "preview-village",
-    data.village,
-  );
+  showValue("preview-village", data.village);
 
-  showValue(
-    "preview-pin-code",
-    data.pinCode,
-  );
-
+  showValue("preview-pin-code", data.pinCode);
 
   /* investment */
 
-  showValue(
-    "preview-investment",
-    formatMoney(data.investment),
-  );
+  showValue("preview-investment", formatMoney(data.investment));
 
-  showValue(
-    "preview-own-contribution",
-    formatMoney(data.ownContribution),
-  );
+  showValue("preview-own-contribution", formatMoney(data.ownContribution));
 
-  showValue(
-    "preview-loan-required",
-    formatMoney(data.loanRequired),
-  );
+  showValue("preview-loan-required", formatMoney(data.loanRequired));
 
-  showValue(
-    "preview-employees",
-    data.employees,
-  );
-
+  showValue("preview-employees", data.employees);
 
   /* entrepreneur */
 
@@ -324,56 +271,35 @@ function loadPreview() {
     formatOption(data.experience, experienceLevels),
   );
 
-  showValue(
-    "preview-education",
-    formatOption(data.education, educationLevels),
-  );
+  showValue("preview-education", formatOption(data.education, educationLevels));
 
-  showValue(
-    "preview-skills",
-    data.skills,
-  );
-
+  showValue("preview-skills", data.skills);
 
   /* business goals */
 
-  showValue(
-    "preview-monthly-revenue",
-    formatMoney(data.monthlyRevenue),
-  );
+  showValue("preview-monthly-revenue", formatMoney(data.monthlyRevenue));
 
   showValue(
     "preview-target-market",
     formatOption(data.targetMarket, targetMarkets),
   );
 
-  showValue(
-    "preview-business-goal",
-    data.businessGoal,
-  );
+  showValue("preview-business-goal", data.businessGoal);
 }
-
 
 loadPreview();
 
-
 /* confirmation */
 
-const confirmDetails = document.getElementById(
-  "confirm-details",
-);
+const confirmDetails = document.getElementById("confirm-details");
 
-const submitProfileBtn = document.getElementById(
-  "submit-profile-btn",
-);
-
+const submitProfileBtn = document.getElementById("submit-profile-btn");
 
 if (confirmDetails && submitProfileBtn) {
   confirmDetails.addEventListener("change", function () {
     submitProfileBtn.disabled = !confirmDetails.checked;
   });
 }
-
 
 /* final submission */
 
@@ -383,14 +309,10 @@ if (submitProfileBtn) {
       return;
     }
 
-    const previewData = localStorage.getItem(
-      "gramnitiBusinessProfilePreview",
-    );
+    const previewData = localStorage.getItem("gramnitiBusinessProfilePreview");
 
     if (!previewData) {
-      alert(
-        "Business profile data could not be found.",
-      );
+      alert("Business profile data could not be found.");
 
       window.location.href = "business-profile.html";
       return;
@@ -405,61 +327,44 @@ if (submitProfileBtn) {
       return;
     }
 
-
     /*
       This is temporary frontend storage.
       Later the backend API will save this
       profile in the database.
     */
 
-    businessData.submittedAt =
-      new Date().toISOString();
+    businessData.submittedAt = new Date().toISOString();
 
     localStorage.setItem(
       "gramnitiBusinessProfile",
       JSON.stringify(businessData),
     );
 
-    localStorage.setItem(
-      "gramnitiProfileCompleted",
-      "true",
-    );
-
+    localStorage.setItem("gramnitiProfileCompleted", "true");
 
     /* draft is no longer needed */
 
-    localStorage.removeItem(
-      "gramnitiBusinessProfileDraft",
-    );
+    localStorage.removeItem("gramnitiBusinessProfileDraft");
 
-    localStorage.removeItem(
-      "gramnitiBusinessProfilePreview",
-    );
-
+    localStorage.removeItem("gramnitiBusinessProfilePreview");
 
     /*
       Later we can show a proper success
       message instead of using alert().
     */
 
-    alert(
-      "Business profile submitted successfully.",
-    );
+    const successModal = document.getElementById("success-modal");
 
-
-    window.location.href =
-      "../Market_Analysis/market-analysis.html";
+    if (successModal) {
+      successModal.classList.add("show");
+    }
   });
 }
-
 
 /* logout */
 
 const logoutBtn = document.getElementById("logout-btn");
-const sidebarLogout = document.getElementById(
-  "sidebar-logout",
-);
-
+const sidebarLogout = document.getElementById("sidebar-logout");
 
 function logoutUser() {
   localStorage.removeItem("user");
@@ -472,10 +377,8 @@ function logoutUser() {
     after the login files are created.
   */
 
-  window.location.href =
-    "../Dashboard/dashboard.html";
+  window.location.href = "../Dashboard/dashboard.html";
 }
-
 
 if (logoutBtn) {
   logoutBtn.addEventListener("click", logoutUser);
@@ -485,9 +388,16 @@ if (sidebarLogout) {
   sidebarLogout.addEventListener("click", logoutUser);
 }
 
-
 /* icons */
 
 if (typeof lucide !== "undefined") {
   lucide.createIcons();
+}
+
+const continueAnalysisBtn = document.getElementById("continue-analysis-btn");
+
+if (continueAnalysisBtn) {
+  continueAnalysisBtn.addEventListener("click", function () {
+    window.location.href = "../Market_Analysis/market-analysis.html";
+  });
 }

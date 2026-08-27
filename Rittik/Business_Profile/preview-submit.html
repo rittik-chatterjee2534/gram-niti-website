@@ -135,7 +135,10 @@
             <span class="sidebar-text"> Business Profile </span>
           </a>
 
-          <a href="../Market_Analysis/market-analysis.html" class="sidebar-link">
+          <a
+            href="../Market_Analysis/market-analysis.html"
+            class="sidebar-link"
+          >
             <i data-lucide="chart-no-axes-combined" class="sidebar-icon"></i>
 
             <span class="sidebar-text"> Market Analysis </span>
@@ -486,6 +489,27 @@
           </button>
         </div>
       </main>
+    </div>
+
+    <!-- submission success modal -->
+    <div class="success-modal" id="success-modal">
+      <div class="success-modal-box">
+        <div class="success-icon">
+          <i data-lucide="check"></i>
+        </div>
+
+        <h2>Business Profile Submitted</h2>
+
+        <p>
+          Your business information has been saved successfully. You can now
+          continue to your market analysis.
+        </p>
+
+        <button type="button" id="continue-analysis-btn">
+          Continue to Market Analysis
+          <i data-lucide="arrow-right"></i>
+        </button>
+      </div>
     </div>
 
     <script src="preview-submit.js"></script>
