@@ -13,7 +13,7 @@ html {
 body {
   min-height: 100vh;
 
-  background: #f7f9fb;
+  background: #f8fafc;
   color: #1f2937;
 
   font-family: "Inter", sans-serif;
@@ -36,7 +36,6 @@ button {
   cursor: pointer;
 }
 
-
 /* Navbar */
 
 .top-navbar {
@@ -53,11 +52,10 @@ button {
   padding: 0 32px;
 
   background: #2e7d32;
-  color: #fff;
+  color: #ffffff;
 
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
-
 
 .mobile-menu-btn {
   width: 40px;
@@ -73,7 +71,7 @@ button {
   border-radius: 7px;
 
   background: rgba(255, 255, 255, 0.12);
-  color: #fff;
+  color: #ffffff;
 }
 
 .mobile-menu-btn:hover {
@@ -81,22 +79,24 @@ button {
 }
 
 .mobile-menu-btn svg {
-  width: 22px;
-  height: 22px;
+  width: 23px;
+  height: 23px;
 }
-
 
 /* Logo */
 
 .navbar-logo {
   display: flex;
   align-items: center;
-  gap: 11px;
+
+  gap: 12px;
+
+  color: #ffffff;
 }
 
 .logo-icon {
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
 
   display: flex;
   align-items: center;
@@ -104,13 +104,13 @@ button {
 
   flex-shrink: 0;
 
-  border: 2px solid rgba(255, 255, 255, 0.8);
+  border: 2px solid rgba(255, 255, 255, 0.85);
   border-radius: 50%;
 }
 
 .logo-icon svg {
-  width: 22px;
-  height: 22px;
+  width: 23px;
+  height: 23px;
 }
 
 .logo-text {
@@ -120,30 +120,31 @@ button {
 
 .logo-name {
   font-family: "Poppins", sans-serif;
-  font-size: 22px;
+
+  font-size: 23px;
   font-weight: 600;
+
   line-height: 1.1;
 }
 
 .logo-tagline {
   margin-top: 3px;
 
-  color: rgba(255, 255, 255, 0.78);
+  color: rgba(255, 255, 255, 0.8);
 
   font-size: 11px;
 }
-
 
 /* Navbar right */
 
 .navbar-right {
   display: flex;
   align-items: center;
-  gap: 14px;
+
+  gap: 15px;
 
   margin-left: auto;
 }
-
 
 /* Notification */
 
@@ -152,8 +153,8 @@ button {
 }
 
 .notification-btn {
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
 
   display: flex;
   align-items: center;
@@ -165,7 +166,7 @@ button {
   border-radius: 50%;
 
   background: transparent;
-  color: #fff;
+  color: #ffffff;
 }
 
 .notification-btn:hover {
@@ -178,14 +179,15 @@ button {
 }
 
 .notification-badge {
-  min-width: 17px;
-  height: 17px;
+  min-width: 18px;
+  height: 18px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
   position: absolute;
+
   top: 1px;
   right: 0;
 
@@ -200,26 +202,27 @@ button {
   font-weight: 700;
 }
 
-
 /* Notification dropdown */
 
 .notification-dropdown {
-  width: 350px;
+  width: 360px;
 
   display: none;
 
   position: absolute;
-  top: calc(100% + 10px);
+
+  top: calc(100% + 12px);
   right: 0;
 
   overflow: hidden;
 
-  background: #fff;
+  background: #ffffff;
+  color: #1f2937;
 
   border: 1px solid #e5e7eb;
-  border-radius: 9px;
+  border-radius: 12px;
 
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 12px 30px rgba(31, 41, 55, 0.14);
 
   z-index: 1100;
 }
@@ -233,14 +236,20 @@ button {
   align-items: center;
   justify-content: space-between;
 
-  padding: 15px 17px;
+  padding: 16px 18px;
+
+  background: #ffffff;
+  color: #1f2937;
 
   border-bottom: 1px solid #e5e7eb;
 }
 
 .notification-header h3 {
+  color: #1f2937;
+
   font-family: "Poppins", sans-serif;
-  font-size: 15px;
+
+  font-size: 16px;
   font-weight: 600;
 }
 
@@ -256,9 +265,13 @@ button {
 
 .notification-item {
   display: flex;
-  gap: 11px;
 
-  padding: 14px 17px;
+  gap: 12px;
+
+  padding: 15px 18px;
+
+  background: #ffffff;
+  color: #1f2937;
 
   border-bottom: 1px solid #f1f5f9;
 }
@@ -268,12 +281,12 @@ button {
 }
 
 .notification-item.unread {
-  background: #f3faf4;
+  background: #f4fbf5;
 }
 
 .notification-dot {
-  width: 8px;
-  height: 8px;
+  width: 9px;
+  height: 9px;
 
   margin-top: 6px;
 
@@ -285,18 +298,21 @@ button {
 }
 
 .notification-item p {
-  margin-bottom: 4px;
+  margin-bottom: 5px;
+
+  color: #1f2937;
 
   font-size: 13px;
   font-weight: 500;
+
   line-height: 1.5;
 }
 
 .notification-item span {
   color: #6b7280;
+
   font-size: 11px;
 }
-
 
 /* Profile */
 
@@ -307,15 +323,16 @@ button {
 .profile-btn {
   display: flex;
   align-items: center;
-  gap: 10px;
 
-  padding: 5px 7px;
+  gap: 11px;
+
+  padding: 5px 8px;
 
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
 
   background: transparent;
-  color: #fff;
+  color: #ffffff;
 }
 
 .profile-btn:hover {
@@ -323,8 +340,8 @@ button {
 }
 
 .profile-avatar {
-  width: 38px;
-  height: 38px;
+  width: 40px;
+  height: 40px;
 
   display: flex;
   align-items: center;
@@ -334,17 +351,19 @@ button {
 
   border-radius: 50%;
 
-  background: #fff;
+  background: #ffffff;
   color: #2e7d32;
 
   font-family: "Poppins", sans-serif;
-  font-size: 14px;
+
+  font-size: 15px;
   font-weight: 600;
 }
 
 .profile-info {
   display: flex;
   flex-direction: column;
+
   align-items: flex-start;
 }
 
@@ -362,30 +381,31 @@ button {
 }
 
 .profile-arrow {
-  width: 15px;
-  height: 15px;
+  width: 16px;
+  height: 16px;
 }
-
 
 /* Profile dropdown */
 
 .profile-dropdown {
-  width: 185px;
+  width: 190px;
 
   display: none;
 
   position: absolute;
-  top: calc(100% + 10px);
+
+  top: calc(100% + 12px);
   right: 0;
 
-  padding: 7px;
+  padding: 8px;
 
-  background: #fff;
+  background: #ffffff;
+  color: #1f2937;
 
   border: 1px solid #e5e7eb;
-  border-radius: 9px;
+  border-radius: 10px;
 
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 10px 28px rgba(31, 41, 55, 0.14);
 
   z-index: 1100;
 }
@@ -400,17 +420,19 @@ button {
 
   display: flex;
   align-items: center;
-  gap: 8px;
 
-  padding: 10px 11px;
+  gap: 9px;
+
+  padding: 11px 12px;
 
   border: none;
-  border-radius: 6px;
+  border-radius: 7px;
 
   background: transparent;
   color: #1f2937;
 
   text-align: left;
+
   font-size: 14px;
 }
 
@@ -421,10 +443,9 @@ button {
 }
 
 .profile-dropdown svg {
-  width: 16px;
-  height: 16px;
+  width: 17px;
+  height: 17px;
 }
-
 
 /* Layout */
 
@@ -433,7 +454,6 @@ button {
 
   min-height: calc(100vh - 74px);
 }
-
 
 /* Sidebar */
 
@@ -448,13 +468,14 @@ button {
   justify-content: space-between;
 
   position: sticky;
+
   top: 74px;
 
-  padding: 24px 13px;
+  padding: 26px 14px;
 
   overflow-y: auto;
 
-  background: #fff;
+  background: #ffffff;
 
   border-right: 1px solid #e5e7eb;
 }
@@ -462,7 +483,8 @@ button {
 .sidebar-nav {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+
+  gap: 7px;
 }
 
 .sidebar-link {
@@ -470,14 +492,15 @@ button {
 
   display: flex;
   align-items: center;
-  gap: 12px;
+
+  gap: 13px;
 
   position: relative;
 
-  padding: 12px 13px;
+  padding: 13px 14px;
 
   border: none;
-  border-radius: 8px;
+  border-radius: 9px;
 
   background: transparent;
   color: #4b5563;
@@ -485,11 +508,13 @@ button {
   font-size: 15px;
   font-weight: 500;
 
+  line-height: 1.4;
+
   text-align: left;
 }
 
 .sidebar-link:hover {
-  background: #f1f7f2;
+  background: #f0f7f1;
   color: #2e7d32;
 }
 
@@ -503,21 +528,22 @@ button {
 .sidebar-link.active::before {
   content: "";
 
-  width: 3px;
+  width: 4px;
 
   position: absolute;
+
   top: 8px;
   bottom: 8px;
   left: 0;
 
-  border-radius: 0 3px 3px 0;
+  border-radius: 0 4px 4px 0;
 
   background: #2e7d32;
 }
 
 .sidebar-icon {
-  width: 20px;
-  height: 20px;
+  width: 21px;
+  height: 21px;
 
   flex-shrink: 0;
 
@@ -529,12 +555,17 @@ button {
   color: #2e7d32;
 }
 
+.sidebar-text {
+  white-space: nowrap;
+}
+
 .sidebar-bottom {
   display: flex;
   flex-direction: column;
-  gap: 6px;
 
-  padding-top: 16px;
+  gap: 7px;
+
+  padding-top: 18px;
 
   border-top: 1px solid #e5e7eb;
 }
@@ -548,18 +579,17 @@ button {
   color: #dc2626;
 }
 
-
-/* Main */
+/* Main content */
 
 .financial-main {
   flex: 1;
+
   min-width: 0;
 
   padding: 30px 34px 45px;
 
-  background: #f7f9fb;
+  background: #f8fafc;
 }
-
 
 /* Page header */
 
@@ -578,7 +608,7 @@ button {
 
   color: #2e7d32;
 
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
 
   text-transform: uppercase;
@@ -587,7 +617,8 @@ button {
 
 .page-header h1 {
   font-family: "Poppins", sans-serif;
-  font-size: 32px;
+
+  font-size: 30px;
   font-weight: 600;
 }
 
@@ -598,44 +629,35 @@ button {
 
   color: #6b7280;
 
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.6;
 }
-
 
 /* Buttons */
 
 .outline-button,
 .primary-button,
 .draft-button {
-  min-height: 44px;
+  min-height: 42px;
 
   display: inline-flex;
   align-items: center;
   justify-content: center;
 
-  gap: 8px;
+  gap: 7px;
 
-  padding: 10px 17px;
+  padding: 9px 16px;
 
-  border-radius: 8px;
+  border-radius: 7px;
 
   font-size: 14px;
   font-weight: 600;
-
-  transition:
-    background 0.2s ease,
-    border-color 0.2s ease,
-    transform 0.2s ease;
 }
-
-
-/* Reset */
 
 .outline-button {
   border: 1px solid #2e7d32;
 
-  background: #fff;
+  background: #ffffff;
   color: #2e7d32;
 }
 
@@ -643,60 +665,48 @@ button {
   background: #f0f7f1;
 }
 
-
-/* Continue button */
-
 .primary-button {
   border: 1px solid #2e7d32;
 
   background: #2e7d32;
-  color: #fff;
+  color: #ffffff;
 }
 
 .primary-button:hover {
   background: #256b2a;
-
-  transform: translateY(-1px);
 }
-
-
-/* Save Plan - same style as Business Profile Save Draft */
 
 .draft-button {
   border: 1px solid #2e7d32;
 
-  background: #fff;
+  background: #ffffff;
   color: #2e7d32;
 }
 
 .draft-button:hover {
   background: #f0f7f1;
-
-  border-color: #2e7d32;
-
-  transform: translateY(-1px);
 }
 
 .outline-button svg,
 .primary-button svg,
 .draft-button svg {
-  width: 17px;
-  height: 17px;
+  width: 16px;
+  height: 16px;
 }
-
 
 /* Business summary */
 
 .business-summary {
   display: flex;
   align-items: center;
+
   gap: 14px;
 
   padding: 18px 20px;
 
   margin-bottom: 20px;
 
-  background: #fff;
+  background: #ffffff;
 
   border: 1px solid #e5e7eb;
   border-radius: 10px;
@@ -732,14 +742,15 @@ button {
 .business-summary-content > span {
   color: #6b7280;
 
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .business-summary-content h2 {
   margin-top: 3px;
 
   font-family: "Poppins", sans-serif;
-  font-size: 18px;
+
+  font-size: 17px;
   font-weight: 600;
 }
 
@@ -748,7 +759,7 @@ button {
 
   color: #6b7280;
 
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .plan-status {
@@ -759,19 +770,18 @@ button {
   background: #f7f3e5;
   color: #8a6508;
 
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
 }
-
 
 /* Form cards */
 
 .form-card {
   margin-bottom: 20px;
 
-  padding: 22px;
+  padding: 20px;
 
-  background: #fff;
+  background: #ffffff;
 
   border: 1px solid #e5e7eb;
   border-radius: 10px;
@@ -782,18 +792,19 @@ button {
 .form-card-header {
   display: flex;
   align-items: center;
-  gap: 12px;
 
-  margin-bottom: 20px;
+  gap: 11px;
 
-  padding-bottom: 16px;
+  margin-bottom: 18px;
+
+  padding-bottom: 15px;
 
   border-bottom: 1px solid #edf0f2;
 }
 
 .form-section-icon {
-  width: 42px;
-  height: 42px;
+  width: 40px;
+  height: 40px;
 
   display: flex;
   align-items: center;
@@ -808,32 +819,33 @@ button {
 }
 
 .form-section-icon svg {
-  width: 20px;
-  height: 20px;
+  width: 19px;
+  height: 19px;
 }
 
 .form-card-header h2 {
   font-family: "Poppins", sans-serif;
-  font-size: 20px;
+
+  font-size: 18px;
   font-weight: 600;
 }
 
 .form-card-header p {
-  margin-top: 3px;
+  margin-top: 2px;
 
   color: #6b7280;
 
-  font-size: 14px;
+  font-size: 13px;
 }
-
 
 /* Form */
 
 .form-grid {
   display: grid;
+
   grid-template-columns: repeat(2, minmax(0, 1fr));
 
-  gap: 18px 20px;
+  gap: 17px 20px;
 }
 
 .form-group {
@@ -848,14 +860,14 @@ button {
 
   color: #374151;
 
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
 }
 
 .form-group input,
 .form-group select {
   width: 100%;
-  height: 45px;
+  height: 44px;
 
   padding: 0 12px;
 
@@ -864,10 +876,10 @@ button {
   border: 1px solid #cfd4da;
   border-radius: 7px;
 
-  background: #fff;
+  background: #ffffff;
   color: #1f2937;
 
-  font-size: 15px;
+  font-size: 14px;
 }
 
 .form-group input::placeholder {
@@ -888,7 +900,6 @@ button {
   cursor: not-allowed;
 }
 
-
 /* Rupee input */
 
 .input-with-icon {
@@ -902,11 +913,12 @@ button {
 
 .input-with-icon > span {
   position: absolute;
+
   left: 12px;
 
   color: #6b7280;
 
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
 
   pointer-events: none;
@@ -921,9 +933,8 @@ button {
 
   color: #6b7280;
 
-  font-size: 12px;
+  font-size: 11px;
 }
-
 
 /* Financial summary */
 
@@ -937,7 +948,8 @@ button {
 
 .section-heading h2 {
   font-family: "Poppins", sans-serif;
-  font-size: 21px;
+
+  font-size: 20px;
   font-weight: 600;
 }
 
@@ -946,25 +958,26 @@ button {
 
   color: #6b7280;
 
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .summary-grid {
   display: grid;
+
   grid-template-columns: repeat(4, minmax(0, 1fr));
 
   gap: 15px;
 }
 
 .summary-card {
-  min-height: 145px;
+  min-height: 140px;
 
   display: flex;
   flex-direction: column;
 
   padding: 18px;
 
-  background: #fff;
+  background: #ffffff;
 
   border: 1px solid #e5e7eb;
   border-radius: 10px;
@@ -978,7 +991,7 @@ button {
   align-items: center;
   justify-content: center;
 
-  margin-bottom: 15px;
+  margin-bottom: 14px;
 
   border-radius: 8px;
 
@@ -994,26 +1007,26 @@ button {
 .summary-card > span {
   color: #6b7280;
 
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .summary-card strong {
   margin-top: 6px;
 
   font-family: "Poppins", sans-serif;
-  font-size: 21px;
+
+  font-size: 19px;
   font-weight: 600;
 }
-
 
 /* Profitability */
 
 .profitability-card {
   margin-bottom: 22px;
 
-  padding: 22px;
+  padding: 20px;
 
-  background: #fff;
+  background: #ffffff;
 
   border: 1px solid #dbe7dc;
   border-radius: 10px;
@@ -1028,7 +1041,7 @@ button {
 
   gap: 24px;
 
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .section-tag {
@@ -1038,16 +1051,18 @@ button {
 
   color: #2e7d32;
 
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
 
   text-transform: uppercase;
+
   letter-spacing: 0.04em;
 }
 
 .profitability-header h2 {
   font-family: "Poppins", sans-serif;
-  font-size: 20px;
+
+  font-size: 18px;
   font-weight: 600;
 }
 
@@ -1058,7 +1073,7 @@ button {
 
   color: #6b7280;
 
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1.6;
 }
 
@@ -1081,19 +1096,21 @@ button {
 
   color: #4b5563;
 
-  font-size: 12px;
+  font-size: 11px;
 }
 
 .profit-score strong {
   color: #2e7d32;
 
   font-family: "Poppins", sans-serif;
-  font-size: 24px;
+
+  font-size: 23px;
   font-weight: 600;
 }
 
 .profitability-stats {
   display: grid;
+
   grid-template-columns: repeat(3, minmax(0, 1fr));
 
   gap: 12px;
@@ -1114,15 +1131,15 @@ button {
 
   color: #6b7280;
 
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .profitability-stats strong {
   font-family: "Poppins", sans-serif;
-  font-size: 16px;
+
+  font-size: 15px;
   font-weight: 600;
 }
-
 
 /* Bottom actions */
 
@@ -1131,12 +1148,10 @@ button {
   align-items: center;
   justify-content: flex-end;
 
-  gap: 12px;
+  gap: 10px;
 
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-top: 4px;
 }
-
 
 /* Tablet */
 
@@ -1155,7 +1170,6 @@ button {
   }
 }
 
-
 @media (max-width: 950px) {
   .profile-info,
   .profile-arrow {
@@ -1167,7 +1181,6 @@ button {
     flex-direction: column;
   }
 }
-
 
 /* Mobile */
 
@@ -1202,12 +1215,13 @@ button {
     height: calc(100vh - 66px);
 
     position: fixed;
+
     top: 66px;
     left: -270px;
 
-    padding: 22px 13px;
+    padding: 24px 14px;
 
-    background: #fff;
+    background: #ffffff;
 
     box-shadow: 6px 0 20px rgba(0, 0, 0, 0.12);
 
@@ -1218,6 +1232,19 @@ button {
 
   .sidebar.active {
     left: 0;
+  }
+
+  .sidebar-link {
+    gap: 13px;
+
+    padding: 13px 14px;
+
+    font-size: 15px;
+  }
+
+  .sidebar-icon {
+    width: 21px;
+    height: 21px;
   }
 
   .financial-main {
@@ -1232,7 +1259,7 @@ button {
   }
 
   .page-header h1 {
-    font-size: 28px;
+    font-size: 27px;
   }
 
   .business-summary {
@@ -1263,7 +1290,6 @@ button {
   }
 }
 
-
 /* Small phones */
 
 @media (max-width: 480px) {
@@ -1288,11 +1314,11 @@ button {
   }
 
   .page-header h1 {
-    font-size: 25px;
+    font-size: 24px;
   }
 
   .page-description {
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .form-card {

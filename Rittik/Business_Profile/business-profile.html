@@ -6,7 +6,6 @@
 
     <title>Business Profile | GramNiti</title>
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
@@ -15,17 +14,14 @@
       rel="stylesheet"
     />
 
-    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
-    <!-- CSS -->
     <link rel="stylesheet" href="business-profile.css" />
   </head>
 
   <body>
     <!-- Navbar -->
     <header class="top-navbar">
-      <!-- Mobile Menu -->
       <button
         type="button"
         class="mobile-menu-btn"
@@ -35,20 +31,17 @@
         <i data-lucide="menu"></i>
       </button>
 
-      <!-- Logo -->
       <a href="../Dashboard/dashboard.html" class="navbar-logo">
         <div class="logo-icon">
           <i data-lucide="sprout"></i>
         </div>
 
         <div class="logo-text">
-          <span class="logo-name"> GramNiti </span>
-
+          <span class="logo-name">GramNiti</span>
           <span class="logo-tagline"> Empowering Rural Entrepreneurs </span>
         </div>
       </a>
 
-      <!-- Navbar Right -->
       <div class="navbar-right">
         <!-- Notifications -->
         <div class="notification-wrapper">
@@ -59,11 +52,9 @@
             aria-label="Notifications"
           >
             <i data-lucide="bell"></i>
-
-            <span class="notification-badge"> 3 </span>
+            <span class="notification-badge">3</span>
           </button>
 
-          <!-- Notification Dropdown -->
           <div class="notification-dropdown" id="notification-dropdown">
             <div class="notification-header">
               <h3>Notifications</h3>
@@ -75,9 +66,9 @@
               <div class="notification-dot"></div>
 
               <div>
-                <p>Your business feasibility report is ready.</p>
+                <p>Complete your business profile to continue.</p>
 
-                <span> 10 minutes ago </span>
+                <span>Just now</span>
               </div>
             </div>
 
@@ -85,9 +76,9 @@
               <div class="notification-dot"></div>
 
               <div>
-                <p>You are eligible for the PMEGP scheme.</p>
+                <p>Your market analysis will use your business details.</p>
 
-                <span> 2 hours ago </span>
+                <span>2 hours ago</span>
               </div>
             </div>
 
@@ -95,18 +86,11 @@
               <div class="notification-dot"></div>
 
               <div>
-                <p>Your financial plan was saved successfully.</p>
+                <p>Remember to review your details before submitting.</p>
 
-                <span> Yesterday </span>
+                <span>Yesterday</span>
               </div>
             </div>
-
-            <a
-              href="../Dashboard/notifications.html"
-              class="view-all-notifications"
-            >
-              View All Notifications
-            </a>
           </div>
         </div>
 
@@ -121,15 +105,13 @@
             <div class="profile-avatar">A</div>
 
             <div class="profile-info">
-              <span class="profile-name"> Arjun Kumar </span>
-
-              <span class="profile-role"> Entrepreneur </span>
+              <span class="profile-name">Arjun Kumar</span>
+              <span class="profile-role">Entrepreneur</span>
             </div>
 
             <i data-lucide="chevron-down" class="profile-arrow"></i>
           </button>
 
-          <!-- Profile Dropdown -->
           <div class="profile-dropdown" id="profile-dropdown">
             <a href="../Dashboard/profile.html">
               <i data-lucide="user"></i>
@@ -150,54 +132,47 @@
       </div>
     </header>
 
-    <!-- Main Layout -->
+    <!-- Main layout -->
     <div class="business-layout">
       <!-- Sidebar -->
       <aside class="sidebar" id="sidebar">
         <nav class="sidebar-nav">
-          <!-- Dashboard -->
           <a href="../Dashboard/dashboard.html" class="sidebar-link">
             <i data-lucide="layout-dashboard" class="sidebar-icon"></i>
 
             <span class="sidebar-text"> Dashboard </span>
           </a>
 
-          <!-- Business Profile -->
           <a href="business-profile.html" class="sidebar-link active">
             <i data-lucide="briefcase-business" class="sidebar-icon"></i>
 
             <span class="sidebar-text"> Business Profile </span>
           </a>
 
-          <!-- Market Analysis -->
           <a href="../Market_Analysis/market-analysis.html" class="sidebar-link">
             <i data-lucide="chart-no-axes-combined" class="sidebar-icon"></i>
 
             <span class="sidebar-text"> Market Analysis </span>
           </a>
 
-          <!-- Financial Plan -->
           <a href="../Financial_Plan/financial-plan.html" class="sidebar-link">
             <i data-lucide="indian-rupee" class="sidebar-icon"></i>
 
             <span class="sidebar-text"> Financial Plan </span>
           </a>
 
-          <!-- Schemes -->
           <a href="../Schemes/schemes.html" class="sidebar-link">
             <i data-lucide="landmark" class="sidebar-icon"></i>
 
             <span class="sidebar-text"> Schemes </span>
           </a>
 
-          <!-- Reports -->
           <a href="../Reports/reports.html" class="sidebar-link">
             <i data-lucide="file-chart-column" class="sidebar-icon"></i>
 
             <span class="sidebar-text"> Reports </span>
           </a>
 
-          <!-- AI Assistant -->
           <a href="../Ai_Assistant/ai-assistant.html" class="sidebar-link">
             <i data-lucide="bot" class="sidebar-icon"></i>
 
@@ -205,7 +180,6 @@
           </a>
         </nav>
 
-        <!-- Sidebar Bottom -->
         <div class="sidebar-bottom">
           <a href="../Settings/settings.html" class="sidebar-link">
             <i data-lucide="settings" class="sidebar-icon"></i>
@@ -225,9 +199,9 @@
         </div>
       </aside>
 
-      <!-- Main Content -->
+      <!-- Main content -->
       <main class="business-main">
-        <!-- Page Header -->
+        <!-- Page heading -->
         <section class="business-page-header">
           <div class="page-heading-content">
             <p class="page-label">Business Setup</p>
@@ -240,25 +214,25 @@
             </p>
           </div>
 
-          <!-- Profile Completion -->
+          <!-- Profile completion -->
           <div class="profile-progress">
             <div class="progress-info">
-              <span> Profile Completion </span>
+              <span>Profile Completion</span>
 
-              <strong id="progress-percentage"> 20% </strong>
+              <strong id="progress-percentage"> 0% </strong>
             </div>
 
             <div class="progress-bar">
               <div
                 class="progress-fill"
                 id="progress-fill"
-                style="width: 20%"
+                style="width: 0%"
               ></div>
             </div>
           </div>
         </section>
 
-        <!-- Business Profile Form -->
+        <!-- Form -->
         <form id="business-profile-form">
           <!-- Business Information -->
           <section class="form-card">
@@ -269,13 +243,11 @@
 
               <div>
                 <h2>Business Information</h2>
-
                 <p>Enter the basic information about your business.</p>
               </div>
             </div>
 
             <div class="form-grid">
-              <!-- Business Name -->
               <div class="form-group">
                 <label for="business-name">
                   Business Name
@@ -291,7 +263,6 @@
                 />
               </div>
 
-              <!-- Business Type -->
               <div class="form-group">
                 <label for="business-type">
                   Business Type
@@ -313,7 +284,6 @@
                 </select>
               </div>
 
-              <!-- Sector -->
               <div class="form-group">
                 <label for="business-sector">
                   Sector / Industry
@@ -339,7 +309,6 @@
                 </select>
               </div>
 
-              <!-- Business Stage -->
               <div class="form-group">
                 <label for="business-stage">
                   Business Stage
@@ -361,7 +330,6 @@
                 </select>
               </div>
 
-              <!-- Description -->
               <div class="form-group full-width">
                 <label for="business-description"> Business Description </label>
 
@@ -384,7 +352,7 @@
             </div>
           </section>
 
-          <!-- Location Details -->
+          <!-- Location -->
           <section class="form-card">
             <div class="form-card-header">
               <div class="form-section-icon">
@@ -399,7 +367,6 @@
             </div>
 
             <div class="form-grid">
-              <!-- State -->
               <div class="form-group">
                 <label for="state">
                   State
@@ -421,7 +388,6 @@
                 </select>
               </div>
 
-              <!-- District -->
               <div class="form-group">
                 <label for="district">
                   District
@@ -437,7 +403,6 @@
                 />
               </div>
 
-              <!-- Village -->
               <div class="form-group">
                 <label for="village">
                   Village / Town
@@ -453,7 +418,6 @@
                 />
               </div>
 
-              <!-- PIN -->
               <div class="form-group">
                 <label for="pin-code">
                   PIN Code
@@ -465,6 +429,7 @@
                   id="pin-code"
                   name="pinCode"
                   maxlength="6"
+                  inputmode="numeric"
                   placeholder="Enter PIN code"
                   required
                 />
@@ -472,7 +437,7 @@
             </div>
           </section>
 
-          <!-- Investment & Funding -->
+          <!-- Investment -->
           <section class="form-card">
             <div class="form-card-header">
               <div class="form-section-icon">
@@ -487,7 +452,6 @@
             </div>
 
             <div class="form-grid">
-              <!-- Investment -->
               <div class="form-group">
                 <label for="investment">
                   Estimated Investment
@@ -495,7 +459,7 @@
                 </label>
 
                 <div class="input-with-icon">
-                  <span> ₹ </span>
+                  <span>₹</span>
 
                   <input
                     type="number"
@@ -508,12 +472,11 @@
                 </div>
               </div>
 
-              <!-- Own Contribution -->
               <div class="form-group">
                 <label for="own-contribution"> Own Contribution </label>
 
                 <div class="input-with-icon">
-                  <span> ₹ </span>
+                  <span>₹</span>
 
                   <input
                     type="number"
@@ -525,12 +488,11 @@
                 </div>
               </div>
 
-              <!-- Loan Required -->
               <div class="form-group">
                 <label for="loan-required"> Loan Required </label>
 
                 <div class="input-with-icon">
-                  <span> ₹ </span>
+                  <span>₹</span>
 
                   <input
                     type="number"
@@ -542,7 +504,6 @@
                 </div>
               </div>
 
-              <!-- Employees -->
               <div class="form-group">
                 <label for="employees"> Expected Employees </label>
 
@@ -557,7 +518,7 @@
             </div>
           </section>
 
-          <!-- Entrepreneur Details -->
+          <!-- Entrepreneur -->
           <section class="form-card">
             <div class="form-card-header">
               <div class="form-section-icon">
@@ -572,7 +533,6 @@
             </div>
 
             <div class="form-grid">
-              <!-- Experience -->
               <div class="form-group">
                 <label for="experience"> Business Experience </label>
 
@@ -591,7 +551,6 @@
                 </select>
               </div>
 
-              <!-- Education -->
               <div class="form-group">
                 <label for="education"> Education / Skill Level </label>
 
@@ -610,7 +569,6 @@
                 </select>
               </div>
 
-              <!-- Skills -->
               <div class="form-group full-width">
                 <label for="skills"> Relevant Skills </label>
 
@@ -624,7 +582,7 @@
             </div>
           </section>
 
-          <!-- Business Goals -->
+          <!-- Goals -->
           <section class="form-card">
             <div class="form-card-header">
               <div class="form-section-icon">
@@ -639,12 +597,11 @@
             </div>
 
             <div class="form-grid">
-              <!-- Monthly Revenue -->
               <div class="form-group">
                 <label for="monthly-revenue"> Expected Monthly Revenue </label>
 
                 <div class="input-with-icon">
-                  <span> ₹ </span>
+                  <span>₹</span>
 
                   <input
                     type="number"
@@ -656,7 +613,6 @@
                 </div>
               </div>
 
-              <!-- Target Market -->
               <div class="form-group">
                 <label for="target-market"> Target Market </label>
 
@@ -675,7 +631,6 @@
                 </select>
               </div>
 
-              <!-- Goal -->
               <div class="form-group full-width">
                 <label for="business-goal"> Main Business Goal </label>
 
@@ -689,7 +644,7 @@
             </div>
           </section>
 
-          <!-- Form Actions -->
+          <!-- Actions -->
           <div class="form-actions">
             <a href="../Dashboard/dashboard.html" class="secondary-button">
               Cancel
@@ -701,8 +656,7 @@
             </button>
 
             <button type="submit" class="primary-button" id="continue-btn">
-              Save & Continue
-
+              Preview & Continue
               <i data-lucide="arrow-right"></i>
             </button>
           </div>
@@ -710,7 +664,6 @@
       </main>
     </div>
 
-    <!-- JavaScript -->
     <script src="business-profile.js"></script>
   </body>
 </html>

@@ -1,23 +1,18 @@
-/* Login check */
-
-// const loggedInUser = localStorage.getItem("user");
-
-// if (!loggedInUser) {
-//   window.location.href = "../Login/login.html";
-// }
-
 /* Navbar */
 
 const profileBtn = document.getElementById("profile-btn");
 const profileDropdown = document.getElementById("profile-dropdown");
 
 const notificationBtn = document.getElementById("notification-btn");
+
 const notificationDropdown = document.getElementById("notification-dropdown");
 
 const markAllReadBtn = document.getElementById("mark-all-read");
+
 const notificationBadge = document.querySelector(".notification-badge");
 
 const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+
 const sidebar = document.getElementById("sidebar");
 
 /* Profile dropdown */
@@ -56,18 +51,16 @@ if (notificationBtn && notificationDropdown) {
   });
 }
 
-/* Mark all notifications as read */
+/* Mark notifications as read */
 
 if (markAllReadBtn) {
   markAllReadBtn.addEventListener("click", () => {
-    const unreadNotifications = document.querySelectorAll(
-      ".notification-item.unread",
-    );
+    const unreadItems = document.querySelectorAll(".notification-item.unread");
 
-    unreadNotifications.forEach((notification) => {
-      notification.classList.remove("unread");
+    unreadItems.forEach((item) => {
+      item.classList.remove("unread");
 
-      const dot = notification.querySelector(".notification-dot");
+      const dot = item.querySelector(".notification-dot");
 
       if (dot) {
         dot.style.display = "none";
@@ -98,8 +91,6 @@ if (mobileMenuBtn && sidebar) {
   });
 }
 
-/* Close mobile sidebar after clicking a link */
-
 if (sidebar) {
   const sidebarLinks = sidebar.querySelectorAll(".sidebar-link");
 
@@ -112,7 +103,7 @@ if (sidebar) {
   });
 }
 
-/* Close dropdowns when clicking outside */
+/* Click outside */
 
 document.addEventListener("click", (event) => {
   if (
@@ -158,75 +149,67 @@ const progressPercentage = document.getElementById("progress-percentage");
 
 const progressFill = document.getElementById("progress-fill");
 
-/* Character counter */
+/* Description counter */
 
 function updateDescriptionCount() {
   if (!businessDescription || !descriptionCount) {
     return;
   }
 
-  const currentLength = businessDescription.value.length;
+  const length = businessDescription.value.length;
 
-  descriptionCount.textContent = `${currentLength} / 500`;
+  descriptionCount.textContent = `${length} / 500`;
 }
 
 if (businessDescription) {
   businessDescription.addEventListener("input", updateDescriptionCount);
 }
 
-/* Fields used for profile completion */
+/* Fields counted in progress */
 
-const fieldsToTrack = [
+const trackedFields = [
   "business-name",
   "business-type",
   "business-sector",
   "business-stage",
   "business-description",
-
   "state",
   "district",
   "village",
   "pin-code",
-
   "investment",
   "own-contribution",
   "loan-required",
   "employees",
-
   "experience",
   "education",
   "skills",
-
   "monthly-revenue",
   "target-market",
   "business-goal",
 ];
 
-/* Update profile completion */
+/* Profile completion */
 
 function updateProgress() {
   let completed = 0;
-  let availableFields = 0;
+  let total = 0;
 
-  fieldsToTrack.forEach((fieldId) => {
+  trackedFields.forEach((fieldId) => {
     const field = document.getElementById(fieldId);
 
     if (!field) {
       return;
     }
 
-    availableFields++;
+    total++;
 
     if (field.value.trim() !== "") {
       completed++;
     }
   });
 
-  let percentage = 0;
-
-  if (availableFields > 0) {
-    percentage = Math.round((completed / availableFields) * 100);
-  }
+  const percentage = total === 0 ? 0 : Math.round((completed / total) * 100);
 
   if (progressPercentage) {
     progressPercentage.textContent = `${percentage}%`;
@@ -237,9 +220,7 @@ function updateProgress() {
   }
 }
 
-/* Watch form fields */
-
-fieldsToTrack.forEach((fieldId) => {
+trackedFields.forEach((fieldId) => {
   const field = document.getElementById(fieldId);
 
   if (!field) {
@@ -247,17 +228,19 @@ fieldsToTrack.forEach((fieldId) => {
   }
 
   field.addEventListener("input", updateProgress);
+
   field.addEventListener("change", updateProgress);
 });
 
-/* Convert form to normal object */
+/* Get form data */
 
-function getBusinessFormData() {
+function getBusinessData() {
   if (!businessForm) {
     return {};
   }
 
   const formData = new FormData(businessForm);
+
   const businessData = {};
 
   formData.forEach((value, key) => {
@@ -267,102 +250,95 @@ function getBusinessFormData() {
   return businessData;
 }
 
-/* Save draft */
+/* Fill form */
+
+function fillBusinessForm(data) {
+  if (!businessForm || !data) {
+    return;
+  }
+
+  Object.keys(data).forEach((fieldName) => {
+    const field = businessForm.elements[fieldName];
+
+    if (field) {
+      field.value = data[fieldName];
+    }
+  });
+
+  updateDescriptionCount();
+  updateProgress();
+}
+
+/* Save Draft */
 
 if (saveDraftBtn && businessForm) {
   saveDraftBtn.addEventListener("click", () => {
-    const businessData = getBusinessFormData();
+    const businessData = getBusinessData();
 
     localStorage.setItem(
       "gramnitiBusinessProfileDraft",
       JSON.stringify(businessData),
     );
 
-    alert("Draft saved successfully.");
+    alert("Business profile draft saved.");
   });
 }
 
-/* Restore draft */
+/* Load existing information */
 
-function loadSavedDraft() {
-  if (!businessForm) {
-    return;
-  }
-
-  const savedDraft = localStorage.getItem("gramnitiBusinessProfileDraft");
-
-  if (!savedDraft) {
-    return;
-  }
-
-  try {
-    const businessData = JSON.parse(savedDraft);
-
-    Object.keys(businessData).forEach((fieldName) => {
-      const field = businessForm.elements[fieldName];
-
-      if (field) {
-        field.value = businessData[fieldName];
-      }
-    });
-
-    updateDescriptionCount();
-    updateProgress();
-  } catch (error) {
-    console.error("Could not load saved draft:", error);
-  }
-}
-
-/* Load already completed profile */
-
-function loadSavedProfile() {
-  if (!businessForm) {
-    return false;
-  }
+function loadBusinessData() {
+  const previewData = localStorage.getItem("gramnitiBusinessProfilePreview");
 
   const savedProfile = localStorage.getItem("gramnitiBusinessProfile");
 
-  if (!savedProfile) {
-    return false;
+  const draft = localStorage.getItem("gramnitiBusinessProfileDraft");
+
+  let dataToLoad = null;
+
+  /*
+    Priority:
+    1. Data coming back from Preview
+    2. Existing completed profile
+    3. Saved draft
+  */
+
+  if (previewData) {
+    dataToLoad = previewData;
+  } else if (savedProfile) {
+    dataToLoad = savedProfile;
+  } else if (draft) {
+    dataToLoad = draft;
   }
 
-  try {
-    const businessData = JSON.parse(savedProfile);
-
-    Object.keys(businessData).forEach((fieldName) => {
-      const field = businessForm.elements[fieldName];
-
-      if (field) {
-        field.value = businessData[fieldName];
-      }
-    });
-
+  if (!dataToLoad) {
     updateDescriptionCount();
     updateProgress();
 
-    return true;
+    return;
+  }
+
+  try {
+    const parsedData = JSON.parse(dataToLoad);
+
+    fillBusinessForm(parsedData);
   } catch (error) {
     console.error("Could not load business profile:", error);
-
-    return false;
   }
 }
 
-/*
-  If a completed profile exists, show that.
-  Otherwise restore an unfinished draft.
-*/
+loadBusinessData();
 
-const profileLoaded = loadSavedProfile();
+/* PIN validation */
 
-if (!profileLoaded) {
-  loadSavedDraft();
+const pinCode = document.getElementById("pin-code");
+
+if (pinCode) {
+  pinCode.addEventListener("input", () => {
+    pinCode.value = pinCode.value.replace(/\D/g, "").slice(0, 6);
+  });
 }
 
-updateDescriptionCount();
-updateProgress();
-
-/* Save and continue */
+/* Preview & Continue */
 
 if (businessForm) {
   businessForm.addEventListener("submit", (event) => {
@@ -374,18 +350,48 @@ if (businessForm) {
       return;
     }
 
-    const businessData = getBusinessFormData();
+    const pinValue = pinCode ? pinCode.value.trim() : "";
+
+    if (pinCode && !/^\d{6}$/.test(pinValue)) {
+      alert("Please enter a valid 6-digit PIN code.");
+
+      pinCode.focus();
+
+      return;
+    }
+
+    const businessData = getBusinessData();
+
+    /*
+        Save data specifically for the
+        Preview & Submit page.
+      */
 
     localStorage.setItem(
-      "gramnitiBusinessProfile",
+      "gramnitiBusinessProfilePreview",
       JSON.stringify(businessData),
     );
 
-    localStorage.setItem("gramnitiProfileCompleted", "true");
+    /*
+        Keep the same data as a draft too,
+        so the user does not lose anything.
+      */
 
-    localStorage.removeItem("gramnitiBusinessProfileDraft");
+    localStorage.setItem(
+      "gramnitiBusinessProfileDraft",
+      JSON.stringify(businessData),
+    );
 
-    window.location.href = "../Dashboard/dashboard.html";
+    /*
+        IMPORTANT:
+        Do NOT mark profileCompleted here.
+
+        The profile is only finalized when
+        Submit & Analyze is clicked on the
+        Preview page.
+      */
+
+    window.location.href = "preview-submit.html";
   });
 }
 
@@ -401,7 +407,16 @@ function logoutUser() {
 
   sessionStorage.clear();
 
-  window.location.href = "../Login/login.html";
+  /*
+    Login page is not created yet.
+
+    When Login exists, change this to:
+
+    window.location.href =
+      "../Login/login.html";
+  */
+
+  window.location.href = "../Dashboard/dashboard.html";
 }
 
 if (logoutBtn) {
@@ -412,7 +427,7 @@ if (sidebarLogout) {
   sidebarLogout.addEventListener("click", logoutUser);
 }
 
-/* Lucide icons */
+/* Lucide */
 
 if (typeof lucide !== "undefined") {
   lucide.createIcons();

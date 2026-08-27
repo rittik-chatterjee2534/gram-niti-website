@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Preview & Submit | GramNiti</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="stylesheet" href="preview-submit.css" />
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <header class="top-navbar">
+      <button
+        type="button"
+        class="mobile-menu-btn"
+        id="mobile-menu-btn"
+        aria-label="Open menu"
+      >
+        <i data-lucide="menu"></i>
+      </button>
+
+      <a href="../Dashboard/dashboard.html" class="navbar-logo">
+        <div class="logo-icon">
+          <i data-lucide="sprout"></i>
+        </div>
+
+        <div class="logo-text">
+          <span class="logo-name">GramNiti</span>
+          <span class="logo-tagline"> Empowering Rural Entrepreneurs </span>
+        </div>
+      </a>
+
+      <div class="navbar-right">
+        <!-- Notifications -->
+        <div class="notification-wrapper">
+          <button
+            type="button"
+            class="notification-btn"
+            id="notification-btn"
+            aria-label="Notifications"
+          >
+            <i data-lucide="bell"></i>
+            <span class="notification-badge">2</span>
+          </button>
+
+          <div class="notification-dropdown" id="notification-dropdown">
+            <div class="notification-header">
+              <h3>Notifications</h3>
+
+              <button type="button" id="mark-all-read">Mark all read</button>
+            </div>
+
+            <div class="notification-item unread">
+              <div class="notification-dot"></div>
+
+              <div>
+                <p>Review your business profile before submission.</p>
+
+                <span>Just now</span>
+              </div>
+            </div>
+
+            <div class="notification-item unread">
+              <div class="notification-dot"></div>
+
+              <div>
+                <p>Market analysis will start after submission.</p>
+
+                <span>5 minutes ago</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Profile -->
+        <div class="profile-wrapper">
+          <button type="button" class="profile-btn" id="profile-btn">
+            <div class="profile-avatar">A</div>
+
+            <div class="profile-info">
+              <span class="profile-name"> Arjun Kumar </span>
+
+              <span class="profile-role"> Entrepreneur </span>
+            </div>
+
+            <i data-lucide="chevron-down" class="profile-arrow"></i>
+          </button>
+
+          <div class="profile-dropdown" id="profile-dropdown">
+            <a href="../Profile/profile.html">
+              <i data-lucide="user"></i>
+              Profile
+            </a>
+
+            <a href="../Settings/settings.html">
+              <i data-lucide="settings"></i>
+              Settings
+            </a>
+
+            <button type="button" id="logout-btn">
+              <i data-lucide="log-out"></i>
+              Logout
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main layout -->
+    <div class="preview-layout">
+      <!-- Sidebar -->
+      <aside class="sidebar" id="sidebar">
+        <nav class="sidebar-nav">
+          <a href="../Dashboard/dashboard.html" class="sidebar-link">
+            <i data-lucide="layout-dashboard" class="sidebar-icon"></i>
+
+            <span class="sidebar-text"> Dashboard </span>
+          </a>
+
+          <a href="business-profile.html" class="sidebar-link active">
+            <i data-lucide="briefcase-business" class="sidebar-icon"></i>
+
+            <span class="sidebar-text"> Business Profile </span>
+          </a>
+
+          <a href="../Market_Analysis/market-analysis.html" class="sidebar-link">
+            <i data-lucide="chart-no-axes-combined" class="sidebar-icon"></i>
+
+            <span class="sidebar-text"> Market Analysis </span>
+          </a>
+
+          <a href="../Financial_Plan/financial-plan.html" class="sidebar-link">
+            <i data-lucide="indian-rupee" class="sidebar-icon"></i>
+
+            <span class="sidebar-text"> Financial Plan </span>
+          </a>
+
+          <a href="../Schemes/schemes.html" class="sidebar-link">
+            <i data-lucide="landmark" class="sidebar-icon"></i>
+
+            <span class="sidebar-text"> Schemes </span>
+          </a>
+
+          <a href="../Reports/reports.html" class="sidebar-link">
+            <i data-lucide="file-chart-column" class="sidebar-icon"></i>
+
+            <span class="sidebar-text"> Reports </span>
+          </a>
+
+          <a href="../Ai_Assistant/ai-assistant.html" class="sidebar-link">
+            <i data-lucide="bot" class="sidebar-icon"></i>
+
+            <span class="sidebar-text"> AI Assistant </span>
+          </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+          <a href="../Settings/settings.html" class="sidebar-link">
+            <i data-lucide="settings" class="sidebar-icon"></i>
+
+            <span class="sidebar-text"> Settings </span>
+          </a>
+
+          <button
+            type="button"
+            class="sidebar-link logout-link"
+            id="sidebar-logout"
+          >
+            <i data-lucide="log-out" class="sidebar-icon"></i>
+
+            <span class="sidebar-text"> Logout </span>
+          </button>
+        </div>
+      </aside>
+
+      <!-- Main content -->
+      <main class="preview-main">
+        <!-- Page heading -->
+        <section class="preview-page-header">
+          <div>
+            <p class="page-label">Final Review</p>
+
+            <h1>Preview & Submit</h1>
+
+            <p class="page-description">
+              Review your business information carefully before submitting it
+              for market analysis.
+            </p>
+          </div>
+
+          <a href="business-profile.html" class="edit-profile-button">
+            <i data-lucide="pencil"></i>
+            Edit Profile
+          </a>
+        </section>
+
+        <!-- Info message -->
+        <section class="review-message">
+          <div class="review-message-icon">
+            <i data-lucide="info"></i>
+          </div>
+
+          <div>
+            <h2>Please verify your information</h2>
+
+            <p>
+              The details below will be used for market analysis, financial
+              planning and scheme recommendations.
+            </p>
+          </div>
+        </section>
+
+        <!-- Business information -->
+        <section class="preview-card">
+          <div class="preview-card-header">
+            <div class="preview-card-title">
+              <div class="preview-section-icon">
+                <i data-lucide="briefcase-business"></i>
+              </div>
+
+              <div>
+                <h2>Business Information</h2>
+
+                <p>Basic details about your business.</p>
+              </div>
+            </div>
+
+            <a
+              href="business-profile.html#business-information"
+              class="edit-section-link"
+            >
+              <i data-lucide="pencil"></i>
+              Edit
+            </a>
+          </div>
+
+          <div class="preview-grid">
+            <div class="preview-field">
+              <span>Business Name</span>
+              <strong id="preview-business-name">—</strong>
+            </div>
+
+            <div class="preview-field">
+              <span>Business Type</span>
+              <strong id="preview-business-type">—</strong>
+            </div>
+
+            <div class="preview-field">
+              <span>Sector / Industry</span>
+              <strong id="preview-business-sector">—</strong>
+            </div>
+
+            <div class="preview-field">
+              <span>Business Stage</span>
+              <strong id="preview-business-stage">—</strong>
+            </div>
+
+            <div class="preview-field full-width">
+              <span>Business Description</span>
+
+              <strong id="preview-business-description"> — </strong>
+            </div>
+          </div>
+        </section>
+
+        <!-- Location -->
+        <section class="preview-card">
+          <div class="preview-card-header">
+            <div class="preview-card-title">
+              <div class="preview-section-icon">
+                <i data-lucide="map-pin"></i>
+              </div>
+
+              <div>
+                <h2>Location Details</h2>
+
+                <p>Where the business will operate.</p>
+              </div>
+            </div>
+
+            <a href="business-profile.html" class="edit-section-link">
+              <i data-lucide="pencil"></i>
+              Edit
+            </a>
+          </div>
+
+          <div class="preview-grid">
+            <div class="preview-field">
+              <span>State</span>
+              <strong id="preview-state">—</strong>
+            </div>
+
+            <div class="preview-field">
+              <span>District</span>
+              <strong id="preview-district">—</strong>
+            </div>
+
+            <div class="preview-field">
+              <span>Village / Town</span>
+              <strong id="preview-village">—</strong>
+            </div>
+
+            <div class="preview-field">
+              <span>PIN Code</span>
+              <strong id="preview-pin-code">—</strong>
+            </div>
+          </div>
+        </section>
+
+        <!-- Investment -->
+        <section class="preview-card">
+          <div class="preview-card-header">
+            <div class="preview-card-title">
+              <div class="preview-section-icon">
+                <i data-lucide="indian-rupee"></i>
+              </div>
+
+              <div>
+                <h2>Investment & Funding</h2>
+
+                <p>Financial requirement entered in your profile.</p>
+              </div>
+            </div>
+
+            <a href="business-profile.html" class="edit-section-link">
+              <i data-lucide="pencil"></i>
+              Edit
+            </a>
+          </div>
+
+          <div class="preview-grid">
+            <div class="preview-field">
+              <span>Estimated Investment</span>
+              <strong id="preview-investment">—</strong>
+            </div>
+
+            <div class="preview-field">
+              <span>Own Contribution</span>
+              <strong id="preview-own-contribution">—</strong>
+            </div>
+
+            <div class="preview-field">
+              <span>Loan Required</span>
+              <strong id="preview-loan-required">—</strong>
+            </div>
+
+            <div class="preview-field">
+              <span>Expected Employees</span>
+              <strong id="preview-employees">—</strong>
+            </div>
+          </div>
+        </section>
+
+        <!-- Entrepreneur -->
+        <section class="preview-card">
+          <div class="preview-card-header">
+            <div class="preview-card-title">
+              <div class="preview-section-icon">
+                <i data-lucide="user-round"></i>
+              </div>
+
+              <div>
+                <h2>Entrepreneur Details</h2>
+
+                <p>Your experience and skills.</p>
+              </div>
+            </div>
+
+            <a href="business-profile.html" class="edit-section-link">
+              <i data-lucide="pencil"></i>
+              Edit
+            </a>
+          </div>
+
+          <div class="preview-grid">
+            <div class="preview-field">
+              <span>Business Experience</span>
+              <strong id="preview-experience">—</strong>
+            </div>
+
+            <div class="preview-field">
+              <span>Education / Skill Level</span>
+              <strong id="preview-education">—</strong>
+            </div>
+
+            <div class="preview-field full-width">
+              <span>Relevant Skills</span>
+              <strong id="preview-skills">—</strong>
+            </div>
+          </div>
+        </section>
+
+        <!-- Goals -->
+        <section class="preview-card">
+          <div class="preview-card-header">
+            <div class="preview-card-title">
+              <div class="preview-section-icon">
+                <i data-lucide="target"></i>
+              </div>
+
+              <div>
+                <h2>Business Goals</h2>
+
+                <p>Your expected revenue and business objectives.</p>
+              </div>
+            </div>
+
+            <a href="business-profile.html" class="edit-section-link">
+              <i data-lucide="pencil"></i>
+              Edit
+            </a>
+          </div>
+
+          <div class="preview-grid">
+            <div class="preview-field">
+              <span>Expected Monthly Revenue</span>
+              <strong id="preview-monthly-revenue">—</strong>
+            </div>
+
+            <div class="preview-field">
+              <span>Target Market</span>
+              <strong id="preview-target-market">—</strong>
+            </div>
+
+            <div class="preview-field full-width">
+              <span>Main Business Goal</span>
+              <strong id="preview-business-goal">—</strong>
+            </div>
+          </div>
+        </section>
+
+        <!-- Confirmation -->
+        <section class="submission-card">
+          <div class="submission-content">
+            <div class="submission-icon">
+              <i data-lucide="circle-check-big"></i>
+            </div>
+
+            <div>
+              <h2>Ready to submit?</h2>
+
+              <p>
+                Once submitted, GramNiti will use this information to prepare
+                your market analysis.
+              </p>
+            </div>
+          </div>
+
+          <label class="confirmation-check">
+            <input type="checkbox" id="confirm-details" />
+
+            <span>
+              I confirm that the information provided above is correct to the
+              best of my knowledge.
+            </span>
+          </label>
+        </section>
+
+        <!-- Actions -->
+        <div class="preview-actions">
+          <a href="business-profile.html" class="back-button">
+            <i data-lucide="arrow-left"></i>
+            Back to Edit
+          </a>
+
+          <button
+            type="button"
+            class="submit-button"
+            id="submit-profile-btn"
+            disabled
+          >
+            Submit & Analyze
+            <i data-lucide="arrow-right"></i>
+          </button>
+        </div>
+      </main>
+    </div>
+
+    <script src="preview-submit.js"></script>
+  </body>
+</html>
