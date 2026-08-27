@@ -1,0 +1,363 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/*Header Section Ends Here*/
+
+.header{
+    height: 10vh;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    background-color: #0b4321;
+    color: #f8fafc;
+    align-items: center;
+}
+
+.header .logo{
+    margin-left: 2vw;
+    height: 8vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #f8fafc;
+}
+
+.header .logo span{
+    font-size: 2rem;
+}
+
+.header .logo p{
+    font-size: 1rem;
+}
+
+.navbar{
+    height: 8vh;
+    width: 50vw;
+}
+
+.navbar ul{
+    height: 8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.8vw;
+}
+
+.navbar ul li{
+    list-style: none;
+}
+
+.navbar ul li a{
+    text-decoration: none;
+    color: #f8fafc;
+    font-size: 1.3rem;
+}
+
+.nav-link {
+  position: relative;
+  text-decoration: none;
+  color: #333;
+  padding-bottom: 0.8vh;
+  font-size: 16px;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: #fcfdfe;
+  transition: width 0.3s ease, left 0.3s ease;
+  transition-delay: 0.1s; 
+}
+
+.nav-link:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.header-buttons{
+    display: flex;
+    align-items: center;
+    gap: 0.5vw;
+}
+
+.header-buttons .login{
+    height: 6.5vh;
+    width: 9vw;
+    font-size: 1rem;
+    border-radius: 6px;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5vw;
+}
+
+.header-buttons .login:hover{
+    cursor: pointer;
+}
+
+.header-buttons .register{
+    height: 6.5vh;
+    width: 9vw;
+    border-radius: 6px;
+    border: none;
+    background-color: #14b517;
+    color: white;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5vw;
+}
+
+.header-buttons .register:hover{
+    cursor: pointer;
+}
+
+/*Header Section Ends Here*/
+
+/* Container Section Starts Here*/
+
+.container{
+    height: 60vhvh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: #e8f4e5;
+}
+
+.container .left{
+    padding-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    padding-left: 5vw;
+}
+
+.container .left .info .text{
+    border: 1px solid green;
+    border-radius: 24px;
+    width: 13vw;
+    height: 3vh;
+    background-color: #dae9d4;
+}
+
+.container .left .info .text>img{
+    height: 2vh;
+    width: 1vw;
+    padding-right: 0.2vw;
+    padding-left: 0.1vw;
+}
+
+.left .info h1{
+    font-size: 3.2rem;
+    margin-top: 2vh;
+}
+
+.left .info h2{
+    font-size: 2.6rem;
+    color: green;
+}
+
+.info p{
+    width: 30vw;
+    font-size: 1rem;
+    color: grey;
+    margin-top: 2vh;
+}
+
+.info-buttons{
+    display: flex;
+    gap: 1vw;
+    margin-top: 2vh;
+}
+
+.info .get-started{
+    height: 7.5vh;
+    width: 12vw;
+    font-size: 1rem;
+    background-color: #08840e;
+    border: 1px solid #08840e;
+    border-radius: 6px;
+    color: white;
+}
+.info .explore-features{
+    height: 7.5vh;
+    width: 10vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2vw;
+    font-size: 1rem;
+    border-radius: 6px;
+    background-color: transparent;
+    border: 1px solid #105814;
+    color: #0f4912;
+}
+
+.info .explore-features i{
+    margin-top: 0.3vh;
+}
+
+.badge-items{
+    margin-top: 2.5vh;
+    display: flex;
+    gap: 4vw;
+}
+
+.badge-items i{
+    color: #14b517;
+}
+
+.badge-items span{
+    font-size: 0.9rem;
+    color: rgb(86, 85, 85);
+}
+
+.container .right{
+    display: flex;
+    justify-content: right;
+}
+
+.container .right img{
+    height: 53vh;
+    width: 43vw;
+    border-radius: 1200px 0 0 1200px;
+}
+
+/* Container Section Ends Here*/
+
+/*Platforms Section Starts Here*/
+
+.platform{
+    height: 34.6vh;
+    background-color: #e8f4e5;
+}
+
+.platform .heading{
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    align-items: center;
+    margin-left: 25vw;
+}
+
+.platform .heading h1{
+    color: #04401c;
+}
+
+.platform .heading p{
+    color: #08840e;
+}
+
+.tools{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-top: 2vh;
+    padding-left: 5.5vw;
+    height: 20vh;
+}
+
+.tools .icon{
+    border: none;
+    background-color: #d9f4d9;
+    color: #04401c;
+    font-weight: 600;
+    height: 6vh;
+    width: 3vw;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-left: 6.3vw;
+}
+
+.tools .smart-dashboard,
+.tools .financial-tools,
+.tools .market-insights,
+.tools .ai-assistant{
+    border: 2px solid white;
+    background-color: rgb(243, 248, 241);
+    border-radius: 12px;
+    height: 22vh;
+    width: 17vw;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8vw;
+    padding-left: 1vw;
+    padding-top: 1vh;
+}
+
+.tools .smart-dashboard h1,
+.tools .financial-tools h1,
+.tools .market-insights h1,
+.tools .ai-assistant h1{
+    font-size: 1.2rem;
+}
+
+.tools .smart-dashboard p,
+.tools .financial-tools p,
+.tools .market-insights p,
+.tools .ai-assistant p{
+    font-size: 0.9rem;
+    padding-top: 1vh;
+    width: 16vw;
+    margin-bottom: 1.3vh;
+}
+
+.tools .smart-dashboard a,
+.tools .financial-tools a,
+.tools .market-insights a,
+.tools .ai-assistant a{
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #04401c;
+}
+
+/*Platforms Section Ends Here*/
+
+/*About Us Section starts here*/
+
+.about-us{
+    border: 1px solid black;
+}
+
+.about-us .heading{
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-us_container{
+    border: 1px solid black;
+    display: grid;
+    grid-template-columns: columns;
+}
+
+.about-us_container .left{
+    border: 1px solid black;
+}
+
+.about-us_container .left .problems-faced{
+    border: 1px solid black;
+}
+
+.about-us_container .left .problems-faced li{
+    list-style: circle;
+}
+
+.about-us_container .right{
+    border: 1px solid black;
+}
+
+
+/*About Us Section ends here*/
