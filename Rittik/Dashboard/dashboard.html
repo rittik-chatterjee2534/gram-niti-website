@@ -1,0 +1,575 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>GramNiti Dashboard</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="dashboard.css" />
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <header class="top-navbar">
+      <!-- Mobile menu -->
+      <button
+        type="button"
+        class="mobile-menu-btn"
+        id="mobile-menu-btn"
+        aria-label="Open menu"
+      >
+        <i data-lucide="menu"></i>
+      </button>
+
+      <!-- Logo -->
+      <a href="dashboard.html" class="navbar-logo">
+        <div class="logo-icon">
+          <i data-lucide="sprout"></i>
+        </div>
+
+        <div class="logo-text">
+          <span class="logo-name">GramNiti</span>
+
+          <span class="logo-tagline"> Empowering Rural Entrepreneurs </span>
+        </div>
+      </a>
+
+      <!-- Navbar right -->
+      <div class="navbar-right">
+        <!-- Notifications -->
+        <div class="notification-wrapper">
+          <button
+            type="button"
+            class="notification-btn"
+            id="notification-btn"
+            aria-label="Notifications"
+          >
+            <i data-lucide="bell"></i>
+
+            <span class="notification-badge"> 3 </span>
+          </button>
+
+          <div class="notification-dropdown" id="notification-dropdown">
+            <div class="notification-header">
+              <h3>Notifications</h3>
+
+              <button type="button" id="mark-all-read">Mark all read</button>
+            </div>
+
+            <div class="notification-item unread">
+              <div class="notification-dot"></div>
+
+              <div>
+                <p>Your business feasibility report is ready.</p>
+
+                <span> 10 minutes ago </span>
+              </div>
+            </div>
+
+            <div class="notification-item unread">
+              <div class="notification-dot"></div>
+
+              <div>
+                <p>You are eligible for the PMEGP scheme.</p>
+
+                <span> 2 hours ago </span>
+              </div>
+            </div>
+
+            <div class="notification-item unread">
+              <div class="notification-dot"></div>
+
+              <div>
+                <p>Your financial plan was saved successfully.</p>
+
+                <span> Yesterday </span>
+              </div>
+            </div>
+
+            <a href="#" class="view-all-notifications">
+              View All Notifications
+            </a>
+          </div>
+        </div>
+
+        <!-- Profile -->
+        <div class="profile-wrapper">
+          <button
+            type="button"
+            class="profile-btn"
+            id="profile-btn"
+            aria-label="Open profile menu"
+          >
+            <div class="profile-avatar">A</div>
+
+            <div class="profile-info">
+              <span class="profile-name"> Arjun Kumar </span>
+
+              <span class="profile-role"> Entrepreneur </span>
+            </div>
+
+            <i data-lucide="chevron-down" class="profile-arrow"></i>
+          </button>
+
+          <div class="profile-dropdown" id="profile-dropdown">
+            <a href="#">
+              <i data-lucide="user"></i>
+              Profile
+            </a>
+
+            <a href="#">
+              <i data-lucide="settings"></i>
+              Settings
+            </a>
+
+            <button type="button" id="logout-btn">
+              <i data-lucide="log-out"></i>
+              Logout
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Dashboard layout -->
+    <div class="dashboard-layout">
+      <!-- Sidebar -->
+      <aside class="sidebar" id="sidebar">
+        <nav class="sidebar-nav">
+          <!-- Dashboard -->
+          <a href="dashboard.html" class="sidebar-link active">
+            <i data-lucide="layout-dashboard" class="sidebar-icon"></i>
+
+            <span class="sidebar-text"> Dashboard </span>
+          </a>
+
+          <!-- Business Profile -->
+          <a
+            href="../Business_Profile/business-profile.html"
+            class="sidebar-link"
+          >
+            <i data-lucide="briefcase-business" class="sidebar-icon"></i>
+
+            <span class="sidebar-text"> Business Profile </span>
+          </a>
+
+          <!-- Market Analysis -->
+          <a href="market-analysis.html" class="sidebar-link">
+            <i data-lucide="chart-no-axes-combined" class="sidebar-icon"></i>
+
+            <span class="sidebar-text"> Market Analysis </span>
+          </a>
+
+          <!-- Financial Plan -->
+          <a href="financial-plan.html" class="sidebar-link">
+            <i data-lucide="indian-rupee" class="sidebar-icon"></i>
+
+            <span class="sidebar-text"> Financial Plan </span>
+          </a>
+
+          <!-- Schemes -->
+          <a href="schemes.html" class="sidebar-link">
+            <i data-lucide="landmark" class="sidebar-icon"></i>
+
+            <span class="sidebar-text"> Schemes </span>
+          </a>
+
+          <!-- Reports -->
+          <a href="reports.html" class="sidebar-link">
+            <i data-lucide="file-chart-column" class="sidebar-icon"></i>
+
+            <span class="sidebar-text"> Reports </span>
+          </a>
+
+          <!-- AI Assistant -->
+          <a href="ai-assistant.html" class="sidebar-link">
+            <i data-lucide="bot" class="sidebar-icon"></i>
+
+            <span class="sidebar-text"> AI Assistant </span>
+          </a>
+        </nav>
+
+        <!-- Sidebar bottom -->
+        <div class="sidebar-bottom">
+          <a href="settings.html" class="sidebar-link">
+            <i data-lucide="settings" class="sidebar-icon"></i>
+
+            <span class="sidebar-text"> Settings </span>
+          </a>
+
+          <button
+            type="button"
+            class="sidebar-link logout-link"
+            id="sidebar-logout"
+          >
+            <i data-lucide="log-out" class="sidebar-icon"></i>
+
+            <span class="sidebar-text"> Logout </span>
+          </button>
+        </div>
+      </aside>
+
+      <!-- Main content -->
+      <main class="dashboard-main">
+        <!-- Welcome -->
+        <section class="dashboard-header">
+          <div>
+            <p class="welcome-text">Welcome back,</p>
+
+            <h1 class="dashboard-title">
+              Arjun Kumar
+              <span class="wave">👋</span>
+            </h1>
+
+            <p class="dashboard-subtitle">
+              Here's an overview of your business analysis.
+            </p>
+          </div>
+
+          <div class="dashboard-header-actions">
+            <select class="period-select" id="period-select">
+              <option value="month">This Month</option>
+
+              <option value="week">This Week</option>
+
+              <option value="year">This Year</option>
+            </select>
+          </div>
+        </section>
+
+        <!-- Summary cards -->
+        <section class="summary-grid">
+          <!-- Feasibility -->
+          <article class="summary-card">
+            <div class="summary-card-top">
+              <p class="summary-label">Feasibility Score</p>
+
+              <div class="summary-icon green">
+                <i data-lucide="gauge"></i>
+              </div>
+            </div>
+
+            <div class="summary-value">
+              <span class="highlight-green" id="feasibility-score"> 78 </span>
+
+              <span class="value-small"> /100 </span>
+            </div>
+
+            <p class="summary-status success-text" id="feasibility-status">
+              Good Opportunity
+            </p>
+          </article>
+
+          <!-- Project Cost -->
+          <article class="summary-card">
+            <div class="summary-card-top">
+              <p class="summary-label">Project Cost</p>
+
+              <div class="summary-icon blue">
+                <i data-lucide="wallet-cards"></i>
+              </div>
+            </div>
+
+            <h2 class="summary-value" id="project-cost">₹ 10,00,000</h2>
+
+            <p class="summary-description">Estimated</p>
+          </article>
+
+          <!-- Loan Amount -->
+          <article class="summary-card">
+            <div class="summary-card-top">
+              <p class="summary-label">Loan Amount</p>
+
+              <div class="summary-icon yellow">
+                <i data-lucide="landmark"></i>
+              </div>
+            </div>
+
+            <h2 class="summary-value" id="loan-amount">₹ 9,00,000</h2>
+
+            <p class="summary-description">90% of project cost</p>
+          </article>
+
+          <!-- EMI -->
+          <article class="summary-card">
+            <div class="summary-card-top">
+              <p class="summary-label">EMI (Monthly)</p>
+
+              <div class="summary-icon purple">
+                <i data-lucide="calendar-range"></i>
+              </div>
+            </div>
+
+            <h2 class="summary-value" id="monthly-emi">₹ 14,732</h2>
+
+            <p class="summary-description">7 Years at 8%</p>
+          </article>
+        </section>
+
+        <!-- Main dashboard cards -->
+        <section class="dashboard-content-grid">
+          <!-- Feasibility -->
+          <article class="dashboard-card feasibility-card">
+            <div class="card-header">
+              <div>
+                <h2 class="card-title">Business Feasibility</h2>
+
+                <p class="card-subtitle">
+                  Overall analysis of your proposed business.
+                </p>
+              </div>
+
+              <a href="reports.html?report=feasibility" class="text-button">
+                View Report
+              </a>
+            </div>
+
+            <div class="chart-container">
+              <canvas id="feasibilityChart"></canvas>
+            </div>
+          </article>
+
+          <!-- Recommendation -->
+          <article class="dashboard-card recommendation-card">
+            <div class="card-header">
+              <div>
+                <h2 class="card-title">Top Recommendation</h2>
+
+                <p class="card-subtitle">
+                  Best scheme matched with your profile.
+                </p>
+              </div>
+            </div>
+
+            <div class="recommendation-content">
+              <div class="recommendation-icon">
+                <i data-lucide="landmark"></i>
+              </div>
+
+              <div>
+                <h3>PMEGP Scheme</h3>
+
+                <p>You are eligible for this scheme.</p>
+              </div>
+            </div>
+
+            <div class="recommendation-limit">
+              <span> Maximum Loan </span>
+
+              <strong> ₹ 25,00,000 </strong>
+            </div>
+
+            <a href="schemes.html?scheme=pmegp" class="primary-button">
+              View Details
+
+              <i data-lucide="arrow-right"></i>
+            </a>
+          </article>
+        </section>
+
+        <!-- Quick Actions -->
+        <section class="section-block">
+          <div class="section-heading">
+            <div>
+              <h2>Quick Actions</h2>
+
+              <p>Continue your business planning journey.</p>
+            </div>
+          </div>
+
+          <div class="quick-actions-grid">
+            <!-- Business Profile -->
+            <a
+              href="../Business_Profile/business-profile.html"
+              class="quick-action-card"
+            >
+              <div class="quick-icon">
+                <i data-lucide="briefcase-business"></i>
+              </div>
+
+              <div class="quick-action-content">
+                <h3>Update Business Profile</h3>
+
+                <p>Add or update your business information.</p>
+              </div>
+            </a>
+
+            <!-- Market Analysis -->
+            <a href="market-analysis.html" class="quick-action-card">
+              <div class="quick-icon">
+                <i data-lucide="chart-no-axes-combined"></i>
+              </div>
+
+              <div class="quick-action-content">
+                <h3>Market Analysis</h3>
+
+                <p>Understand your market opportunities.</p>
+              </div>
+            </a>
+
+            <!-- Financial Planning -->
+            <a
+              href="financial-plan.html?mode=continue"
+              class="quick-action-card"
+            >
+              <div class="quick-icon">
+                <i data-lucide="indian-rupee"></i>
+              </div>
+
+              <div class="quick-action-content">
+                <h3>Financial Planning</h3>
+
+                <p>Calculate project cost and financing.</p>
+              </div>
+            </a>
+
+            <!-- AI Assistant -->
+            <a href="ai-assistant.html" class="quick-action-card">
+              <div class="quick-icon">
+                <i data-lucide="bot"></i>
+              </div>
+
+              <div class="quick-action-content">
+                <h3>Ask AI Assistant</h3>
+
+                <p>Get AI-powered business guidance.</p>
+              </div>
+            </a>
+          </div>
+        </section>
+
+        <!-- Recent Activity -->
+        <section class="section-block">
+          <div class="section-heading">
+            <div>
+              <h2>Recent Activity</h2>
+
+              <p>Your latest business planning activity.</p>
+            </div>
+
+            <a href="reports.html" class="text-button"> View All </a>
+          </div>
+
+          <div class="activity-table-wrapper">
+            <table class="activity-table">
+              <thead>
+                <tr>
+                  <th>Activity</th>
+                  <th>Date</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="activity-name">
+                      <div class="activity-icon">
+                        <i data-lucide="chart-no-axes-combined"></i>
+                      </div>
+
+                      Business Feasibility Analysis
+                    </div>
+                  </td>
+
+                  <td>26 Aug 2026</td>
+
+                  <td>
+                    <span class="status-badge status-completed">
+                      Completed
+                    </span>
+                  </td>
+
+                  <td>
+                    <a
+                      href="reports.html?report=feasibility"
+                      class="table-action"
+                    >
+                      View
+                    </a>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <div class="activity-name">
+                      <div class="activity-icon">
+                        <i data-lucide="indian-rupee"></i>
+                      </div>
+
+                      Financial Plan
+                    </div>
+                  </td>
+
+                  <td>24 Aug 2026</td>
+
+                  <td>
+                    <span class="status-badge status-progress">
+                      In Progress
+                    </span>
+                  </td>
+
+                  <td>
+                    <a
+                      href="financial-plan.html?mode=continue"
+                      class="table-action"
+                    >
+                      Continue
+                    </a>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <div class="activity-name">
+                      <div class="activity-icon">
+                        <i data-lucide="landmark"></i>
+                      </div>
+
+                      Government Scheme Recommendation
+                    </div>
+                  </td>
+
+                  <td>22 Aug 2026</td>
+
+                  <td>
+                    <span class="status-badge status-completed">
+                      Completed
+                    </span>
+                  </td>
+
+                  <td>
+                    <a href="schemes.html?scheme=pmegp" class="table-action">
+                      View
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Dashboard JS -->
+    <script src="dashboard.js"></script>
+  </body>
+</html>
