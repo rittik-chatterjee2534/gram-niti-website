@@ -1,10 +1,10 @@
 /* Login check */
 
-const loggedInUser = localStorage.getItem("user");
+// const loggedInUser = localStorage.getItem("user");
 
-if (!loggedInUser) {
-  window.location.href = "../Login/login.html";
-}
+// if (!loggedInUser) {
+//   window.location.href = "../Login/login.html";
+// }
 
 
 /* Navbar */

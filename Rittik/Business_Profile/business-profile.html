@@ -25,6 +25,7 @@
   <body>
     <!-- Navbar -->
     <header class="top-navbar">
+      <!-- Mobile Menu -->
       <button
         type="button"
         class="mobile-menu-btn"
@@ -34,17 +35,20 @@
         <i data-lucide="menu"></i>
       </button>
 
+      <!-- Logo -->
       <a href="../Dashboard/dashboard.html" class="navbar-logo">
         <div class="logo-icon">
           <i data-lucide="sprout"></i>
         </div>
 
         <div class="logo-text">
-          <span class="logo-name">GramNiti</span>
+          <span class="logo-name"> GramNiti </span>
+
           <span class="logo-tagline"> Empowering Rural Entrepreneurs </span>
         </div>
       </a>
 
+      <!-- Navbar Right -->
       <div class="navbar-right">
         <!-- Notifications -->
         <div class="notification-wrapper">
@@ -55,9 +59,11 @@
             aria-label="Notifications"
           >
             <i data-lucide="bell"></i>
-            <span class="notification-badge">3</span>
+
+            <span class="notification-badge"> 3 </span>
           </button>
 
+          <!-- Notification Dropdown -->
           <div class="notification-dropdown" id="notification-dropdown">
             <div class="notification-header">
               <h3>Notifications</h3>
@@ -70,7 +76,8 @@
 
               <div>
                 <p>Your business feasibility report is ready.</p>
-                <span>10 minutes ago</span>
+
+                <span> 10 minutes ago </span>
               </div>
             </div>
 
@@ -79,7 +86,8 @@
 
               <div>
                 <p>You are eligible for the PMEGP scheme.</p>
-                <span>2 hours ago</span>
+
+                <span> 2 hours ago </span>
               </div>
             </div>
 
@@ -88,11 +96,15 @@
 
               <div>
                 <p>Your financial plan was saved successfully.</p>
-                <span>Yesterday</span>
+
+                <span> Yesterday </span>
               </div>
             </div>
 
-            <a href="#" class="view-all-notifications">
+            <a
+              href="../Dashboard/notifications.html"
+              class="view-all-notifications"
+            >
               View All Notifications
             </a>
           </div>
@@ -109,20 +121,22 @@
             <div class="profile-avatar">A</div>
 
             <div class="profile-info">
-              <span class="profile-name">Arjun Kumar</span>
-              <span class="profile-role">Entrepreneur</span>
+              <span class="profile-name"> Arjun Kumar </span>
+
+              <span class="profile-role"> Entrepreneur </span>
             </div>
 
             <i data-lucide="chevron-down" class="profile-arrow"></i>
           </button>
 
+          <!-- Profile Dropdown -->
           <div class="profile-dropdown" id="profile-dropdown">
-            <a href="#">
+            <a href="../Dashboard/profile.html">
               <i data-lucide="user"></i>
               Profile
             </a>
 
-            <a href="#">
+            <a href="../Dashboard/settings.html">
               <i data-lucide="settings"></i>
               Settings
             </a>
@@ -136,56 +150,64 @@
       </div>
     </header>
 
-    <!-- Main layout -->
+    <!-- Main Layout -->
     <div class="business-layout">
       <!-- Sidebar -->
       <aside class="sidebar" id="sidebar">
         <nav class="sidebar-nav">
+          <!-- Dashboard -->
           <a href="../Dashboard/dashboard.html" class="sidebar-link">
             <i data-lucide="layout-dashboard" class="sidebar-icon"></i>
 
             <span class="sidebar-text"> Dashboard </span>
           </a>
 
+          <!-- Business Profile -->
           <a href="business-profile.html" class="sidebar-link active">
             <i data-lucide="briefcase-business" class="sidebar-icon"></i>
 
             <span class="sidebar-text"> Business Profile </span>
           </a>
 
-          <a href="#" class="sidebar-link">
+          <!-- Market Analysis -->
+          <a href="../Market_Analysis/market-analysis.html" class="sidebar-link">
             <i data-lucide="chart-no-axes-combined" class="sidebar-icon"></i>
 
             <span class="sidebar-text"> Market Analysis </span>
           </a>
 
-          <a href="#" class="sidebar-link">
+          <!-- Financial Plan -->
+          <a href="../Financial_Plan/financial-plan.html" class="sidebar-link">
             <i data-lucide="indian-rupee" class="sidebar-icon"></i>
 
             <span class="sidebar-text"> Financial Plan </span>
           </a>
 
-          <a href="#" class="sidebar-link">
+          <!-- Schemes -->
+          <a href="../Schemes/schemes.html" class="sidebar-link">
             <i data-lucide="landmark" class="sidebar-icon"></i>
 
             <span class="sidebar-text"> Schemes </span>
           </a>
 
-          <a href="#" class="sidebar-link">
+          <!-- Reports -->
+          <a href="../Reports/reports.html" class="sidebar-link">
             <i data-lucide="file-chart-column" class="sidebar-icon"></i>
 
             <span class="sidebar-text"> Reports </span>
           </a>
 
-          <a href="#" class="sidebar-link">
+          <!-- AI Assistant -->
+          <a href="../Ai_Assistant/ai-assistant.html" class="sidebar-link">
             <i data-lucide="bot" class="sidebar-icon"></i>
 
             <span class="sidebar-text"> AI Assistant </span>
           </a>
         </nav>
 
+        <!-- Sidebar Bottom -->
         <div class="sidebar-bottom">
-          <a href="#" class="sidebar-link">
+          <a href="../Settings/settings.html" class="sidebar-link">
             <i data-lucide="settings" class="sidebar-icon"></i>
 
             <span class="sidebar-text"> Settings </span>
@@ -203,9 +225,9 @@
         </div>
       </aside>
 
-      <!-- Main content -->
+      <!-- Main Content -->
       <main class="business-main">
-        <!-- Page heading -->
+        <!-- Page Header -->
         <section class="business-page-header">
           <div class="page-heading-content">
             <p class="page-label">Business Setup</p>
@@ -218,11 +240,12 @@
             </p>
           </div>
 
-          <!-- Completion -->
+          <!-- Profile Completion -->
           <div class="profile-progress">
             <div class="progress-info">
-              <span>Profile Completion</span>
-              <strong id="progress-percentage">20%</strong>
+              <span> Profile Completion </span>
+
+              <strong id="progress-percentage"> 20% </strong>
             </div>
 
             <div class="progress-bar">
@@ -235,7 +258,7 @@
           </div>
         </section>
 
-        <!-- Form -->
+        <!-- Business Profile Form -->
         <form id="business-profile-form">
           <!-- Business Information -->
           <section class="form-card">
@@ -316,7 +339,7 @@
                 </select>
               </div>
 
-              <!-- Stage -->
+              <!-- Business Stage -->
               <div class="form-group">
                 <label for="business-stage">
                   Business Stage
@@ -376,6 +399,7 @@
             </div>
 
             <div class="form-grid">
+              <!-- State -->
               <div class="form-group">
                 <label for="state">
                   State
@@ -397,6 +421,7 @@
                 </select>
               </div>
 
+              <!-- District -->
               <div class="form-group">
                 <label for="district">
                   District
@@ -412,6 +437,7 @@
                 />
               </div>
 
+              <!-- Village -->
               <div class="form-group">
                 <label for="village">
                   Village / Town
@@ -427,6 +453,7 @@
                 />
               </div>
 
+              <!-- PIN -->
               <div class="form-group">
                 <label for="pin-code">
                   PIN Code
@@ -445,7 +472,7 @@
             </div>
           </section>
 
-          <!-- Investment -->
+          <!-- Investment & Funding -->
           <section class="form-card">
             <div class="form-card-header">
               <div class="form-section-icon">
@@ -460,6 +487,7 @@
             </div>
 
             <div class="form-grid">
+              <!-- Investment -->
               <div class="form-group">
                 <label for="investment">
                   Estimated Investment
@@ -467,7 +495,7 @@
                 </label>
 
                 <div class="input-with-icon">
-                  <span>₹</span>
+                  <span> ₹ </span>
 
                   <input
                     type="number"
@@ -480,11 +508,12 @@
                 </div>
               </div>
 
+              <!-- Own Contribution -->
               <div class="form-group">
                 <label for="own-contribution"> Own Contribution </label>
 
                 <div class="input-with-icon">
-                  <span>₹</span>
+                  <span> ₹ </span>
 
                   <input
                     type="number"
@@ -496,11 +525,12 @@
                 </div>
               </div>
 
+              <!-- Loan Required -->
               <div class="form-group">
                 <label for="loan-required"> Loan Required </label>
 
                 <div class="input-with-icon">
-                  <span>₹</span>
+                  <span> ₹ </span>
 
                   <input
                     type="number"
@@ -512,6 +542,7 @@
                 </div>
               </div>
 
+              <!-- Employees -->
               <div class="form-group">
                 <label for="employees"> Expected Employees </label>
 
@@ -541,6 +572,7 @@
             </div>
 
             <div class="form-grid">
+              <!-- Experience -->
               <div class="form-group">
                 <label for="experience"> Business Experience </label>
 
@@ -559,6 +591,7 @@
                 </select>
               </div>
 
+              <!-- Education -->
               <div class="form-group">
                 <label for="education"> Education / Skill Level </label>
 
@@ -577,6 +610,7 @@
                 </select>
               </div>
 
+              <!-- Skills -->
               <div class="form-group full-width">
                 <label for="skills"> Relevant Skills </label>
 
@@ -605,11 +639,12 @@
             </div>
 
             <div class="form-grid">
+              <!-- Monthly Revenue -->
               <div class="form-group">
                 <label for="monthly-revenue"> Expected Monthly Revenue </label>
 
                 <div class="input-with-icon">
-                  <span>₹</span>
+                  <span> ₹ </span>
 
                   <input
                     type="number"
@@ -621,6 +656,7 @@
                 </div>
               </div>
 
+              <!-- Target Market -->
               <div class="form-group">
                 <label for="target-market"> Target Market </label>
 
@@ -639,6 +675,7 @@
                 </select>
               </div>
 
+              <!-- Goal -->
               <div class="form-group full-width">
                 <label for="business-goal"> Main Business Goal </label>
 
@@ -652,7 +689,7 @@
             </div>
           </section>
 
-          <!-- Form actions -->
+          <!-- Form Actions -->
           <div class="form-actions">
             <a href="../Dashboard/dashboard.html" class="secondary-button">
               Cancel
@@ -665,6 +702,7 @@
 
             <button type="submit" class="primary-button" id="continue-btn">
               Save & Continue
+
               <i data-lucide="arrow-right"></i>
             </button>
           </div>
@@ -672,12 +710,7 @@
       </main>
     </div>
 
+    <!-- JavaScript -->
     <script src="business-profile.js"></script>
-
-    <script>
-      if (typeof lucide !== "undefined") {
-        lucide.createIcons();
-      }
-    </script>
   </body>
 </html>

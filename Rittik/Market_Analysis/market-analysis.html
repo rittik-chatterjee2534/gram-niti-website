@@ -1,0 +1,648 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Market Analysis | GramNiti</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="market-analysis.css" />
+  </head>
+
+  <body>
+    <!--NAVBAR-->
+
+    <header class="top-navbar">
+      <button
+        type="button"
+        class="mobile-menu-btn"
+        id="mobile-menu-btn"
+        aria-label="Open menu"
+      >
+        <i data-lucide="menu"></i>
+      </button>
+
+      <a href="dashboard.html" class="navbar-logo">
+        <div class="logo-icon">
+          <i data-lucide="sprout"></i>
+        </div>
+
+        <div class="logo-text">
+          <span class="logo-name">GramNiti</span>
+          <span class="logo-tagline"> Empowering Rural Entrepreneurs </span>
+        </div>
+      </a>
+
+      <div class="navbar-right">
+        <!-- Notifications -->
+
+        <div class="notification-wrapper">
+          <button
+            type="button"
+            class="notification-btn"
+            id="notification-btn"
+            aria-label="Notifications"
+          >
+            <i data-lucide="bell"></i>
+
+            <span class="notification-badge">3</span>
+          </button>
+
+          <div class="notification-dropdown" id="notification-dropdown">
+            <div class="notification-header">
+              <h3>Notifications</h3>
+
+              <button type="button" id="mark-all-read">Mark all read</button>
+            </div>
+
+            <div class="notification-item unread">
+              <div class="notification-dot"></div>
+
+              <div>
+                <p>Your market analysis is ready.</p>
+                <span>10 minutes ago</span>
+              </div>
+            </div>
+
+            <div class="notification-item unread">
+              <div class="notification-dot"></div>
+
+              <div>
+                <p>You may be eligible for the PMEGP scheme.</p>
+                <span>2 hours ago</span>
+              </div>
+            </div>
+
+            <div class="notification-item unread">
+              <div class="notification-dot"></div>
+
+              <div>
+                <p>Your business profile was updated.</p>
+                <span>Yesterday</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Profile -->
+
+        <div class="profile-wrapper">
+          <button type="button" class="profile-btn" id="profile-btn">
+            <div class="profile-avatar">A</div>
+
+            <div class="profile-info">
+              <span class="profile-name"> Arjun Kumar </span>
+
+              <span class="profile-role"> Entrepreneur </span>
+            </div>
+
+            <i data-lucide="chevron-down" class="profile-arrow"></i>
+          </button>
+
+          <div class="profile-dropdown" id="profile-dropdown">
+            <a href="#">
+              <i data-lucide="user"></i>
+              Profile
+            </a>
+
+            <a href="settings.html">
+              <i data-lucide="settings"></i>
+              Settings
+            </a>
+
+            <button type="button" id="logout-btn">
+              <i data-lucide="log-out"></i>
+              Logout
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!--DASHBOARD LAYOUT -->
+
+    <div class="dashboard-layout">
+      <!--SIDEBAR -->
+
+      <aside class="sidebar" id="sidebar">
+        <nav class="sidebar-nav">
+          <a href="../Dashboard/dashboard.html" class="sidebar-link">
+            <i data-lucide="layout-dashboard" class="sidebar-icon"></i>
+
+            <span class="sidebar-text"> Dashboard </span>
+          </a>
+
+          <a
+            href="../Business_Profile/business-profile.html"
+            class="sidebar-link"
+          >
+            <i data-lucide="briefcase-business" class="sidebar-icon"></i>
+
+            <span class="sidebar-text"> Business Profile </span>
+          </a>
+
+          <!-- Active page -->
+
+          <a href="market-analysis.html" class="sidebar-link active">
+            <i data-lucide="chart-no-axes-combined" class="sidebar-icon"></i>
+
+            <span class="sidebar-text"> Market Analysis </span>
+          </a>
+
+          <a href="../Financial_Plan/financial-plan.html" class="sidebar-link">
+            <i data-lucide="indian-rupee" class="sidebar-icon"></i>
+
+            <span class="sidebar-text"> Financial Plan </span>
+          </a>
+
+          <a href="../Schemes/schemes.html" class="sidebar-link">
+            <i data-lucide="landmark" class="sidebar-icon"></i>
+
+            <span class="sidebar-text"> Schemes </span>
+          </a>
+
+          <a href="../Reports/reports.html" class="sidebar-link">
+            <i data-lucide="file-chart-column" class="sidebar-icon"></i>
+
+            <span class="sidebar-text"> Reports </span>
+          </a>
+
+          <a href="../Ai_Assistant/ai-assistant.html" class="sidebar-link">
+            <i data-lucide="bot" class="sidebar-icon"></i>
+
+            <span class="sidebar-text"> AI Assistant </span>
+          </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+          <a href="../Settings/settings.html" class="sidebar-link">
+            <i data-lucide="settings" class="sidebar-icon"></i>
+
+            <span class="sidebar-text"> Settings </span>
+          </a>
+
+          <button
+            type="button"
+            class="sidebar-link logout-link"
+            id="sidebar-logout"
+          >
+            <i data-lucide="log-out" class="sidebar-icon"></i>
+
+            <span class="sidebar-text"> Logout </span>
+          </button>
+        </div>
+      </aside>
+
+      <!--MAIN CONTENT -->
+
+      <main class="market-main">
+        <!-- Page Header -->
+
+        <section class="page-header">
+          <div>
+            <p class="page-label">Business Intelligence</p>
+
+            <h1>Market Analysis</h1>
+
+            <p class="page-description">
+              Understand the demand, competition and opportunities for your
+              proposed business.
+            </p>
+          </div>
+
+          <button type="button" class="outline-button" id="reanalyze-btn">
+            <i data-lucide="refresh-cw"></i>
+            Re-analyze Market
+          </button>
+        </section>
+
+        <!--BUSINESS SUMMARY -->
+
+        <section class="business-summary">
+          <div class="business-summary-icon">
+            <i data-lucide="store"></i>
+          </div>
+
+          <div class="business-summary-content">
+            <span>Analyzing Market For</span>
+
+            <h2>Organic Food Processing Unit</h2>
+
+            <p>Food Processing • West Bengal • Rural Market</p>
+          </div>
+
+          <span class="analysis-status"> Analysis Complete </span>
+        </section>
+
+        <!--MARKET OVERVIEW -->
+
+        <section class="section-block">
+          <div class="section-heading">
+            <h2>Market Overview</h2>
+
+            <p>Key indicators based on your business profile.</p>
+          </div>
+
+          <div class="overview-grid">
+            <!-- Demand -->
+
+            <article class="overview-card">
+              <div class="overview-card-top">
+                <div class="overview-icon green">
+                  <i data-lucide="trending-up"></i>
+                </div>
+
+                <span class="score-badge good"> High </span>
+              </div>
+
+              <p>Market Demand</p>
+
+              <h3><span id="demand-score">86</span>/100</h3>
+
+              <span class="overview-note positive">
+                Strong customer demand
+              </span>
+            </article>
+
+            <!-- Competition -->
+
+            <article class="overview-card">
+              <div class="overview-card-top">
+                <div class="overview-icon orange">
+                  <i data-lucide="users"></i>
+                </div>
+
+                <span class="score-badge moderate"> Moderate </span>
+              </div>
+
+              <p>Competition Level</p>
+
+              <h3><span id="competition-score">58</span>/100</h3>
+
+              <span class="overview-note"> Manageable competition </span>
+            </article>
+
+            <!-- Growth -->
+
+            <article class="overview-card">
+              <div class="overview-card-top">
+                <div class="overview-icon blue">
+                  <i data-lucide="chart-line"></i>
+                </div>
+
+                <span class="score-badge good"> High </span>
+              </div>
+
+              <p>Growth Potential</p>
+
+              <h3><span id="growth-score">82</span>/100</h3>
+
+              <span class="overview-note positive">
+                Strong growth potential
+              </span>
+            </article>
+
+            <!-- Overall Score -->
+
+            <article class="overview-card">
+              <div class="overview-card-top">
+                <div class="overview-icon purple">
+                  <i data-lucide="gauge"></i>
+                </div>
+
+                <span class="score-badge good"> Good </span>
+              </div>
+
+              <p>Market Score</p>
+
+              <h3><span id="market-score">81</span>/100</h3>
+
+              <span class="overview-note positive"> Attractive market </span>
+            </article>
+          </div>
+        </section>
+
+        <!--DEMAND + COMPETITION-->
+
+        <section class="analysis-grid">
+          <!-- Demand Analysis -->
+
+          <article class="analysis-card">
+            <div class="analysis-card-header">
+              <div>
+                <h2>Market Demand</h2>
+
+                <p>Estimated demand for your business.</p>
+              </div>
+
+              <div class="analysis-header-icon">
+                <i data-lucide="trending-up"></i>
+              </div>
+            </div>
+
+            <div class="score-row">
+              <div>
+                <span class="score-label"> Demand Score </span>
+
+                <strong>86/100</strong>
+              </div>
+
+              <span class="large-status good"> High Demand </span>
+            </div>
+
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 86%"></div>
+            </div>
+
+            <div class="analysis-points">
+              <div class="analysis-point">
+                <i data-lucide="check-circle-2"></i>
+
+                <p>Growing demand for locally processed food products.</p>
+              </div>
+
+              <div class="analysis-point">
+                <i data-lucide="check-circle-2"></i>
+
+                <p>Increasing awareness of organic and healthy food choices.</p>
+              </div>
+
+              <div class="analysis-point">
+                <i data-lucide="check-circle-2"></i>
+
+                <p>Opportunity to serve nearby towns and rural markets.</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Competition -->
+
+          <article class="analysis-card">
+            <div class="analysis-card-header">
+              <div>
+                <h2>Competition Analysis</h2>
+
+                <p>Competition in your target market.</p>
+              </div>
+
+              <div class="analysis-header-icon orange">
+                <i data-lucide="users"></i>
+              </div>
+            </div>
+
+            <div class="competition-stats">
+              <div>
+                <span>Competition</span>
+                <strong>Moderate</strong>
+              </div>
+
+              <div>
+                <span>Local Competitors</span>
+                <strong>8–12</strong>
+              </div>
+
+              <div>
+                <span>Entry Difficulty</span>
+                <strong>Medium</strong>
+              </div>
+            </div>
+
+            <div class="insight-box">
+              <i data-lucide="lightbulb"></i>
+
+              <div>
+                <strong>Opportunity</strong>
+
+                <p>
+                  Product quality, local sourcing and better packaging can help
+                  differentiate your business.
+                </p>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <!--TARGET CUSTOMERS-->
+
+        <section class="section-block">
+          <div class="section-heading">
+            <h2>Target Customers</h2>
+
+            <p>Customer segments that may be most relevant to your business.</p>
+          </div>
+
+          <div class="customer-grid">
+            <article class="customer-card">
+              <div class="customer-icon">
+                <i data-lucide="house"></i>
+              </div>
+
+              <h3>Local Households</h3>
+
+              <p>
+                Families looking for affordable and locally produced food
+                products.
+              </p>
+            </article>
+
+            <article class="customer-card">
+              <div class="customer-icon">
+                <i data-lucide="shopping-basket"></i>
+              </div>
+
+              <h3>Retail Shops</h3>
+
+              <p>
+                Grocery stores and local retailers seeking regional products.
+              </p>
+            </article>
+
+            <article class="customer-card">
+              <div class="customer-icon">
+                <i data-lucide="building-2"></i>
+              </div>
+
+              <h3>Nearby Towns</h3>
+
+              <p>Customers in nearby semi-urban markets with growing demand.</p>
+            </article>
+          </div>
+        </section>
+
+        <!--SWOT-->
+
+        <section class="section-block">
+          <div class="section-heading">
+            <h2>SWOT Analysis</h2>
+
+            <p>Key internal and external factors affecting your business.</p>
+          </div>
+
+          <div class="swot-grid">
+            <!-- Strengths -->
+
+            <article class="swot-card strengths">
+              <div class="swot-title">
+                <div class="swot-icon">
+                  <i data-lucide="shield-check"></i>
+                </div>
+
+                <h3>Strengths</h3>
+              </div>
+
+              <ul>
+                <li>Availability of local raw materials</li>
+                <li>Lower operating costs</li>
+                <li>Growing demand for organic products</li>
+              </ul>
+            </article>
+
+            <!-- Weaknesses -->
+
+            <article class="swot-card weaknesses">
+              <div class="swot-title">
+                <div class="swot-icon">
+                  <i data-lucide="circle-minus"></i>
+                </div>
+
+                <h3>Weaknesses</h3>
+              </div>
+
+              <ul>
+                <li>Limited initial brand awareness</li>
+                <li>Dependence on local distribution</li>
+                <li>Initial investment requirements</li>
+              </ul>
+            </article>
+
+            <!-- Opportunities -->
+
+            <article class="swot-card opportunities">
+              <div class="swot-title">
+                <div class="swot-icon">
+                  <i data-lucide="rocket"></i>
+                </div>
+
+                <h3>Opportunities</h3>
+              </div>
+
+              <ul>
+                <li>Government support schemes</li>
+                <li>Expansion into nearby markets</li>
+                <li>Online and direct-to-consumer sales</li>
+              </ul>
+            </article>
+
+            <!-- Threats -->
+
+            <article class="swot-card threats">
+              <div class="swot-title">
+                <div class="swot-icon">
+                  <i data-lucide="triangle-alert"></i>
+                </div>
+
+                <h3>Threats</h3>
+              </div>
+
+              <ul>
+                <li>Established local competitors</li>
+                <li>Changes in raw material prices</li>
+                <li>Seasonal fluctuations in demand</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <!--AI RECOMMENDATIONS-->
+
+        <section class="recommendation-section">
+          <div class="recommendation-heading">
+            <div class="ai-icon">
+              <i data-lucide="sparkles"></i>
+            </div>
+
+            <div>
+              <h2>AI Recommendations</h2>
+
+              <p>Suggested actions based on your market analysis.</p>
+            </div>
+          </div>
+
+          <div class="recommendation-list">
+            <div class="recommendation-item">
+              <span>01</span>
+
+              <p>
+                Focus initially on nearby rural and semi-urban markets to reduce
+                distribution costs.
+              </p>
+            </div>
+
+            <div class="recommendation-item">
+              <span>02</span>
+
+              <p>
+                Build a strong local brand around quality, organic sourcing and
+                affordability.
+              </p>
+            </div>
+
+            <div class="recommendation-item">
+              <span>03</span>
+
+              <p>
+                Partner with local retailers and self-help groups to expand your
+                distribution network.
+              </p>
+            </div>
+
+            <div class="recommendation-item">
+              <span>04</span>
+
+              <p>
+                Explore government schemes before finalizing your financing
+                requirements.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!--Next Step-->
+        <section class="next-step-section">
+          <div>
+            <span class="next-label"> Next Step </span>
+
+            <h2>Ready to plan your finances?</h2>
+
+            <p>
+              Estimate project cost, loan requirements, monthly EMI and
+              profitability.
+            </p>
+          </div>
+
+          <a href="../Financial_Plan/financial-plan.html" class="primary-button">
+            Continue to Financial Plan
+
+            <i data-lucide="arrow-right"></i>
+          </a>
+        </section>
+      </main>
+    </div>
+
+    <!-- JS -->
+    <script src="market-analysis.js"></script>
+  </body>
+</html>

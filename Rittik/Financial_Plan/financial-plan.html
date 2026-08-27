@@ -1,0 +1,569 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Financial Plan | GramNiti</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="stylesheet" href="financial-plan.css" />
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <header class="top-navbar">
+      <button
+        type="button"
+        class="mobile-menu-btn"
+        id="mobile-menu-btn"
+        aria-label="Open menu"
+      >
+        <i data-lucide="menu"></i>
+      </button>
+
+      <a href="../Dashboard/dashboard.html" class="navbar-logo">
+        <div class="logo-icon">
+          <i data-lucide="sprout"></i>
+        </div>
+
+        <div class="logo-text">
+          <span class="logo-name">GramNiti</span>
+          <span class="logo-tagline"> Empowering Rural Entrepreneurs </span>
+        </div>
+      </a>
+
+      <div class="navbar-right">
+        <!-- Notifications -->
+        <div class="notification-wrapper">
+          <button
+            type="button"
+            class="notification-btn"
+            id="notification-btn"
+            aria-label="Notifications"
+          >
+            <i data-lucide="bell"></i>
+            <span class="notification-badge">3</span>
+          </button>
+
+          <div class="notification-dropdown" id="notification-dropdown">
+            <div class="notification-header">
+              <h3>Notifications</h3>
+
+              <button type="button" id="mark-all-read">Mark all read</button>
+            </div>
+
+            <div class="notification-item unread">
+              <div class="notification-dot"></div>
+
+              <div>
+                <p>Your financial plan draft is ready.</p>
+                <span>10 minutes ago</span>
+              </div>
+            </div>
+
+            <div class="notification-item unread">
+              <div class="notification-dot"></div>
+
+              <div>
+                <p>Your market analysis was completed.</p>
+                <span>2 hours ago</span>
+              </div>
+            </div>
+
+            <div class="notification-item unread">
+              <div class="notification-dot"></div>
+
+              <div>
+                <p>You may qualify for a government scheme.</p>
+                <span>Yesterday</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Profile -->
+        <div class="profile-wrapper">
+          <button type="button" class="profile-btn" id="profile-btn">
+            <div class="profile-avatar">A</div>
+
+            <div class="profile-info">
+              <span class="profile-name">Arjun Kumar</span>
+              <span class="profile-role">Entrepreneur</span>
+            </div>
+
+            <i data-lucide="chevron-down" class="profile-arrow"></i>
+          </button>
+
+          <div class="profile-dropdown" id="profile-dropdown">
+            <a href="../Profile/profile.html">
+              <i data-lucide="user"></i>
+              Profile
+            </a>
+
+            <a href="../Settings/settings.html">
+              <i data-lucide="settings"></i>
+              Settings
+            </a>
+
+            <button type="button" id="logout-btn">
+              <i data-lucide="log-out"></i>
+              Logout
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main layout -->
+    <div class="dashboard-layout">
+      <!-- Sidebar -->
+      <aside class="sidebar" id="sidebar">
+        <nav class="sidebar-nav">
+          <a href="../Dashboard/dashboard.html" class="sidebar-link">
+            <i data-lucide="layout-dashboard" class="sidebar-icon"></i>
+            <span class="sidebar-text">Dashboard</span>
+          </a>
+
+          <a
+            href="../Business_Profile/business-profile.html"
+            class="sidebar-link"
+          >
+            <i data-lucide="briefcase-business" class="sidebar-icon"></i>
+            <span class="sidebar-text">Business Profile</span>
+          </a>
+
+          <a href="../Market_Analysis/market-analysis.html" class="sidebar-link">
+            <i data-lucide="chart-no-axes-combined" class="sidebar-icon"></i>
+            <span class="sidebar-text">Market Analysis</span>
+          </a>
+
+          <a href="financial-plan.html" class="sidebar-link active">
+            <i data-lucide="indian-rupee" class="sidebar-icon"></i>
+            <span class="sidebar-text">Financial Plan</span>
+          </a>
+
+          <a href="../Schemes/schemes.html" class="sidebar-link">
+            <i data-lucide="landmark" class="sidebar-icon"></i>
+            <span class="sidebar-text">Schemes</span>
+          </a>
+
+          <a href="../Reports/reports.html" class="sidebar-link">
+            <i data-lucide="file-chart-column" class="sidebar-icon"></i>
+            <span class="sidebar-text">Reports</span>
+          </a>
+
+          <a href="../Ai_Assistant/ai-assistant.html" class="sidebar-link">
+            <i data-lucide="bot" class="sidebar-icon"></i>
+            <span class="sidebar-text">AI Assistant</span>
+          </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+          <a href="../Settings/settings.html" class="sidebar-link">
+            <i data-lucide="settings" class="sidebar-icon"></i>
+            <span class="sidebar-text">Settings</span>
+          </a>
+
+          <button
+            type="button"
+            class="sidebar-link logout-link"
+            id="sidebar-logout"
+          >
+            <i data-lucide="log-out" class="sidebar-icon"></i>
+            <span class="sidebar-text">Logout</span>
+          </button>
+        </div>
+      </aside>
+
+      <!-- Main content -->
+      <main class="financial-main">
+        <!-- Page header -->
+        <section class="page-header">
+          <div>
+            <p class="page-label">Financial Planning</p>
+
+            <h1>Financial Plan</h1>
+
+            <p class="page-description">
+              Estimate your project cost, funding requirement, monthly EMI and
+              expected profitability.
+            </p>
+          </div>
+
+          <button type="button" class="outline-button" id="reset-plan-btn">
+            <i data-lucide="rotate-ccw"></i>
+            Reset Plan
+          </button>
+        </section>
+
+        <!-- Business summary -->
+        <section class="business-summary">
+          <div class="business-summary-icon">
+            <i data-lucide="briefcase-business"></i>
+          </div>
+
+          <div class="business-summary-content">
+            <span>Financial Plan For</span>
+
+            <h2>Organic Food Processing Unit</h2>
+
+            <p>Food Processing • West Bengal • Planning Stage</p>
+          </div>
+
+          <span class="plan-status"> Draft </span>
+        </section>
+
+        <!-- Main form -->
+        <form id="financial-plan-form">
+          <!-- Project cost -->
+          <section class="form-card">
+            <div class="form-card-header">
+              <div class="form-section-icon">
+                <i data-lucide="wallet-cards"></i>
+              </div>
+
+              <div>
+                <h2>Project Cost</h2>
+                <p>Enter the major costs required to start your business.</p>
+              </div>
+            </div>
+
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="land-cost"> Land / Rent Setup </label>
+
+                <div class="input-with-icon">
+                  <span>₹</span>
+                  <input
+                    type="number"
+                    id="land-cost"
+                    name="landCost"
+                    placeholder="e.g. 100000"
+                    min="0"
+                    value="100000"
+                  />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="machinery-cost"> Machinery & Equipment </label>
+
+                <div class="input-with-icon">
+                  <span>₹</span>
+                  <input
+                    type="number"
+                    id="machinery-cost"
+                    name="machineryCost"
+                    placeholder="e.g. 400000"
+                    min="0"
+                    value="400000"
+                  />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="raw-material-cost"> Initial Raw Materials </label>
+
+                <div class="input-with-icon">
+                  <span>₹</span>
+                  <input
+                    type="number"
+                    id="raw-material-cost"
+                    name="rawMaterialCost"
+                    placeholder="e.g. 150000"
+                    min="0"
+                    value="150000"
+                  />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="setup-cost"> Infrastructure / Setup </label>
+
+                <div class="input-with-icon">
+                  <span>₹</span>
+                  <input
+                    type="number"
+                    id="setup-cost"
+                    name="setupCost"
+                    placeholder="e.g. 200000"
+                    min="0"
+                    value="200000"
+                  />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="marketing-cost"> Marketing & Branding </label>
+
+                <div class="input-with-icon">
+                  <span>₹</span>
+                  <input
+                    type="number"
+                    id="marketing-cost"
+                    name="marketingCost"
+                    placeholder="e.g. 50000"
+                    min="0"
+                    value="50000"
+                  />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="other-cost"> Other Initial Costs </label>
+
+                <div class="input-with-icon">
+                  <span>₹</span>
+                  <input
+                    type="number"
+                    id="other-cost"
+                    name="otherCost"
+                    placeholder="e.g. 100000"
+                    min="0"
+                    value="100000"
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Funding -->
+          <section class="form-card">
+            <div class="form-card-header">
+              <div class="form-section-icon">
+                <i data-lucide="landmark"></i>
+              </div>
+
+              <div>
+                <h2>Funding & Loan</h2>
+                <p>Estimate how you plan to finance the project.</p>
+              </div>
+            </div>
+
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="own-contribution"> Own Contribution </label>
+
+                <div class="input-with-icon">
+                  <span>₹</span>
+                  <input
+                    type="number"
+                    id="own-contribution"
+                    name="ownContribution"
+                    placeholder="e.g. 100000"
+                    min="0"
+                    value="100000"
+                  />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="loan-amount"> Loan Amount </label>
+
+                <div class="input-with-icon">
+                  <span>₹</span>
+                  <input
+                    type="number"
+                    id="loan-amount"
+                    name="loanAmount"
+                    min="0"
+                    readonly
+                  />
+                </div>
+
+                <small class="field-help">
+                  Calculated automatically from project cost.
+                </small>
+              </div>
+
+              <div class="form-group">
+                <label for="interest-rate"> Interest Rate (%) </label>
+
+                <input
+                  type="number"
+                  id="interest-rate"
+                  name="interestRate"
+                  min="0"
+                  step="0.1"
+                  value="8"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="loan-tenure"> Loan Tenure </label>
+
+                <select id="loan-tenure" name="loanTenure">
+                  <option value="3">3 Years</option>
+                  <option value="5">5 Years</option>
+                  <option value="7" selected>7 Years</option>
+                  <option value="10">10 Years</option>
+                </select>
+              </div>
+            </div>
+          </section>
+
+          <!-- Revenue -->
+          <section class="form-card">
+            <div class="form-card-header">
+              <div class="form-section-icon">
+                <i data-lucide="chart-line"></i>
+              </div>
+
+              <div>
+                <h2>Revenue & Expenses</h2>
+                <p>Add your estimated monthly income and operating cost.</p>
+              </div>
+            </div>
+
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="monthly-revenue"> Expected Monthly Revenue </label>
+
+                <div class="input-with-icon">
+                  <span>₹</span>
+                  <input
+                    type="number"
+                    id="monthly-revenue"
+                    name="monthlyRevenue"
+                    min="0"
+                    value="150000"
+                  />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="monthly-expenses">
+                  Monthly Operating Expenses
+                </label>
+
+                <div class="input-with-icon">
+                  <span>₹</span>
+                  <input
+                    type="number"
+                    id="monthly-expenses"
+                    name="monthlyExpenses"
+                    min="0"
+                    value="85000"
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Summary -->
+          <section class="financial-summary-section">
+            <div class="section-heading">
+              <h2>Financial Summary</h2>
+              <p>Estimated results based on the values entered above.</p>
+            </div>
+
+            <div class="summary-grid">
+              <article class="summary-card">
+                <div class="summary-icon green">
+                  <i data-lucide="wallet"></i>
+                </div>
+
+                <span>Total Project Cost</span>
+
+                <strong id="total-project-cost"> ₹ 10,00,000 </strong>
+              </article>
+
+              <article class="summary-card">
+                <div class="summary-icon blue">
+                  <i data-lucide="landmark"></i>
+                </div>
+
+                <span>Required Loan</span>
+
+                <strong id="summary-loan-amount"> ₹ 9,00,000 </strong>
+              </article>
+
+              <article class="summary-card">
+                <div class="summary-icon yellow">
+                  <i data-lucide="calendar-range"></i>
+                </div>
+
+                <span>Estimated EMI</span>
+
+                <strong id="estimated-emi"> ₹ 14,000 </strong>
+              </article>
+
+              <article class="summary-card">
+                <div class="summary-icon purple">
+                  <i data-lucide="badge-indian-rupee"></i>
+                </div>
+
+                <span>Monthly Profit</span>
+
+                <strong id="monthly-profit"> ₹ 65,000 </strong>
+              </article>
+            </div>
+          </section>
+
+          <!-- Profitability -->
+          <section class="profitability-card">
+            <div class="profitability-header">
+              <div>
+                <span class="section-tag"> Profitability Estimate </span>
+
+                <h2>Your plan looks financially workable</h2>
+
+                <p>
+                  This estimate will become more accurate when market data and
+                  real business expenses are connected.
+                </p>
+              </div>
+
+              <div class="profit-score">
+                <span>Estimated Margin</span>
+                <strong id="profit-margin"> 43% </strong>
+              </div>
+            </div>
+
+            <div class="profitability-stats">
+              <div>
+                <span>Annual Revenue</span>
+                <strong id="annual-revenue"> ₹ 18,00,000 </strong>
+              </div>
+
+              <div>
+                <span>Annual Operating Cost</span>
+                <strong id="annual-expenses"> ₹ 10,20,000 </strong>
+              </div>
+
+              <div>
+                <span>Annual Profit</span>
+                <strong id="annual-profit"> ₹ 7,80,000 </strong>
+              </div>
+            </div>
+          </section>
+
+          <!-- Actions -->
+          <div class="form-actions">
+            <button type="button" class="draft-button" id="save-plan-btn">
+              <i data-lucide="save"></i>
+              Save Plan
+            </button>
+
+            <a href="../Schemes/schemes.html" class="primary-button">
+              Continue to Schemes
+              <i data-lucide="arrow-right"></i>
+            </a>
+          </div>
+        </form>
+      </main>
+    </div>
+
+    <script src="financial-plan.js"></script>
+  </body>
+</html>
